@@ -186,6 +186,7 @@
             this.SaveButton.TabIndex = 41;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // PriorityCombobox
             // 

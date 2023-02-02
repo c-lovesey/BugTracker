@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BugTrackerLibrary.DataAccess;
 
 namespace BugTrackerLibrary
 {
@@ -21,7 +22,7 @@ namespace BugTrackerLibrary
             if (textFiles)
             {
                 // TODO - create text connection
-                TextConnection text = new TextConnection();
+                TextConnector text = new TextConnector();
                 Connections.Add(text);
             }
         }

@@ -1,4 +1,6 @@
 ﻿using BugTrackerLibrary;
+using BugTrackerLibrary.DataAccess;
+using BugTrackerLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,17 +23,39 @@ namespace BugTrackerUI
         {
             if (ValidateForm())
             {
-                BugModel model = new BugModel();
+                BugModel model = new BugModel(
+                    ApplicationCombobox.Text, 
+                    VersionTextbox.Text,
+                    true, "Unresolved", 
+                    EnvironmentCombobox.Text, 
+                    PriorityCombobox.Text, 
+                    DescriptionTextbox.Text);
 
-                model.Application = ApplicationCombobox.Text;
-                model.Version = VersionTextbox.Text;
-                model.BugStatus = true;
-                model.BugResolution = "open";
-                model.BugEnvironment = EnvironmentCombobox.Text;
-                model.BugPriority = PriorityCombobox.Text;
-                model.BugDescription = DescriptionTextbox.Text;
-                //TODO Add steps to reproduce or just remove
+                foreach (IDataConnection db in GlobalConfig.Connections)
+                {
+                    db.CreateBugReport(model);
+                }
+                ApplicationCombobox.Text = "";
+                VersionTextbox.Text = "";
+                EnvironmentCombobox.Text = "";
+                PriorityCombobox.Text = "";
+                DescriptionTextbox.Text = "";
+                //AttatchmentRichTextbox = "";
+
+                //model.Application = ApplicationCombobox.Text;
+                //model.Version = VersionTextbox.Text;
+                //model.BugStatus = true;
+                //model.BugResolution = "Unresolved";
+                //model.BugEnvironment = EnvironmentCombobox.Text;
+                //model.BugPriority = PriorityCombobox.Text;
+                //model.BugDescription = DescriptionTextbox.Text;
+
+                //TODO figure out attatchments and if extra fields are necesarry
                 //model.BugTitle
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information.");
             }
         }
         private bool ValidateForm()
@@ -75,5 +99,6 @@ namespace BugTrackerUI
         {
 
         }
+
     }
 }

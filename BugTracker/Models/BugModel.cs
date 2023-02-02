@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BugTrackerLibrary
+namespace BugTrackerLibrary.Models
 {
     public class BugModel
     {
@@ -27,5 +27,26 @@ namespace BugTrackerLibrary
         public string BugAttatchment { get; set; }//pictures about the bug
         public string BugEnvironment { get; set; }//what environment does it take place windows10/11 linux
 
+        public BugModel()
+        {
+
+        }
+        public BugModel(
+            string application,
+            string version,
+            bool bugStatus,
+            string bugResolution,
+            string bugEnvironment,
+            string bugPriority,
+            string bugDescription)
+        {
+            Application = application;
+            Version = version;
+            BugStatus = bugStatus;
+            BugResolution = bugResolution;
+            BugEnvironment = bugEnvironment;
+            BugPriority = bugPriority;
+            BugDescription = bugDescription;
+        }
     }
 }
