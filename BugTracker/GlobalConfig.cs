@@ -26,5 +26,9 @@ namespace BugTrackerLibrary
                 Connections.Add(text);
             }
         }
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
     }
 }

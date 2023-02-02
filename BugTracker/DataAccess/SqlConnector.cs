@@ -17,6 +17,7 @@ namespace BugTrackerLibrary.DataAccess
         /// <returns>The report info, including the unique id</returns>
         public BugModel CreateBugReport(BugModel model)
         {
+
             model.BugId = 1;
             return model;
         }
