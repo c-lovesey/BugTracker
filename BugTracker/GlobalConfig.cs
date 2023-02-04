@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BugTrackerLibrary.DataAccess;
+using System.Configuration;
 
 namespace BugTrackerLibrary
 {
@@ -26,7 +27,7 @@ namespace BugTrackerLibrary
                 Connections.Add(text);
             }
         }
-        public static string CnnString(string name)
+        public static string CnnString(string name)//gets the connection string form the App.config file
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
