@@ -13,6 +13,7 @@ namespace BugTrackerLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
+        //TODO - Make the other creation methods for each model
         // TODO - Make the CreateBugReport method save to the database
         /// <summary>
         /// Saves a new Bug Report to the database
@@ -25,8 +26,9 @@ namespace BugTrackerLibrary.DataAccess
             //the using staement protects against memory leaks
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
             {
+                //TODO Create all correct inputs for this from the form or remove some
                 var p = new DynamicParameters();
-                p.Add("@BugID", model.BugId);
+                p.Add("@BugID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
                 p.Add("@BugTitle", model.BugTitle);
                 p.Add("@IssueType", model.IssueType);
                 p.Add("@ApplicationID", model.Application);
@@ -43,6 +45,7 @@ namespace BugTrackerLibrary.DataAccess
                 p.Add("@BugExpectedBehaviour", model.BugExpextedBehaviour);
                 p.Add("@AttatchmentID", model.BugAttatchment);
                 p.Add("@EnvironmentID", model.BugEnvironment);
+                connection.Execute("dbo.spBugDetails_Insert", p, commandType: CommandType.StoredProcedure);
                 //p.Add("@DateCreated", model.Date);
                 //connection.CreateBugReport(model);
             }
@@ -52,7 +55,3 @@ namespace BugTrackerLibrary.DataAccess
         }
     }
 }
-//@ApplicationID int = 0 output,
-//	@ApplicationName varchar(50),
-//	@ApplicationLetterID varchar(50),
-//	@VersionID int
