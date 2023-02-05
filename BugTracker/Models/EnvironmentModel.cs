@@ -8,7 +8,18 @@ namespace BugTrackerLibrary.Models
 {
     public class EnvironmentModel
     {
-        public string EnvironmentId { get; set; }
+        public int EnvironmentId { get; set; }
         public string EnvironmentName { get; set; }
+
+        public EnvironmentModel()
+        {
+
+        }
+        public EnvironmentModel(
+            string EnvironmentName
+           )
+        {
+            EnvironmentName = EnvironmentName;
+        }
     }
 }

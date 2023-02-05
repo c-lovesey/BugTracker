@@ -11,5 +11,6 @@ namespace BugTrackerLibrary.DataAccess
     public interface IDataConnection
     {
         BugModel CreateBugReport(BugModel model);
+        EnvironmentModel CreateEnvironment(EnvironmentModel model);
     }
 }

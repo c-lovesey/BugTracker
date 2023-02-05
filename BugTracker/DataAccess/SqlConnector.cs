@@ -20,6 +20,19 @@ namespace BugTrackerLibrary.DataAccess
         /// </summary>
         /// <param name="model">Report Information</param>
         /// <returns>The report info, including the unique id</returns>
+        /// 
+        public EnvironmentModel CreateEnvironment(EnvironmentModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@EnvironmentID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+                p.Add("@EnvironmentName", model.EnvironmentName);
+                connection.Execute("dbo.spEnvironment_Insert", p, commandType: CommandType.StoredProcedure);
+                model.EnvironmentId = p.Get<int>("@EnvironmentId");
+                return model;
+            }
+        }
         public BugModel CreateBugReport(BugModel model)
         {
             //uses IDbConnection to create a connection to the database
@@ -45,9 +58,19 @@ namespace BugTrackerLibrary.DataAccess
                 p.Add("@BugExpectedBehaviour", model.BugExpextedBehaviour);
                 p.Add("@AttatchmentID", model.BugAttatchment);
                 p.Add("@EnvironmentID", model.BugEnvironment);
-                connection.Execute("dbo.spBugDetails_Insert", p, commandType: CommandType.StoredProcedure);
                 //p.Add("@DateCreated", model.Date);
+                //p.Add("@DateModified", model.DateModified);
+
+                //Executes the stored procedure and passes in the information using p
+                connection.Execute("dbo.spBugDetails_Insert", p, commandType: CommandType.StoredProcedure);
+                //gets the id from the database
+                model.BugId = p.Get<int>("@BugID");
+
+
+                return model;
+                
                 //connection.CreateBugReport(model);
+
             }
 
             //    model.BugId = 1;
