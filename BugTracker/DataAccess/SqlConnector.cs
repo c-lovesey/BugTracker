@@ -26,7 +26,24 @@ namespace BugTrackerLibrary.DataAccess
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
             {
                 var p = new DynamicParameters();
-                p.Add("@ApplicationID", model.ApplicationID);
+                p.Add("@BugID", model.BugId);
+                p.Add("@BugTitle", model.BugTitle);
+                p.Add("@IssueType", model.IssueType);
+                p.Add("@ApplicationID", model.Application);
+                p.Add("@BugVersion", model.Version);
+                p.Add("@BugConfirmation", model.BugConformation);
+                p.Add("@BugCategory", model.BugCategory);
+                p.Add("@BugStatus", model.BugStatus);
+                p.Add("@BugPriority", model.BugPriority);
+                p.Add("@BugResolution", model.BugResolution);
+                p.Add("@BugFixedVersion", model.BugFixedVersion);
+                p.Add("@BugDescription", model.BugDescription);
+                p.Add("@BugReproduce", model.BugReproduce);
+                p.Add("@BugObservedBehaviour", model.BugObservedBehaviour);
+                p.Add("@BugExpectedBehaviour", model.BugExpextedBehaviour);
+                p.Add("@AttatchmentID", model.BugAttatchment);
+                p.Add("@EnvironmentID", model.BugEnvironment);
+                //p.Add("@DateCreated", model.Date);
                 //connection.CreateBugReport(model);
             }
 
