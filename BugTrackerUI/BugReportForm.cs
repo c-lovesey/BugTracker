@@ -31,10 +31,7 @@ namespace BugTrackerUI
                     PriorityCombobox.Text, 
                     DescriptionTextbox.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreateBugReport(model);
-                }
+                GlobalConfig.Connection.CreateBugReport(model);
                 ApplicationCombobox.Text = "";
                 VersionTextbox.Text = "";
                 EnvironmentCombobox.Text = "";

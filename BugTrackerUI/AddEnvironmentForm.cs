@@ -42,10 +42,9 @@ namespace BugTrackerUI
                 EnvironmentModel model = new EnvironmentModel(EnvironmentTextBox.Text);
 
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreateEnvironment(model);
-                }
+                GlobalConfig.Connection.CreateEnvironment(model);
+                
+                
                 EnvironmentTextBox.Text = "";
 
 
