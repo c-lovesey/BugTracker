@@ -16,10 +16,10 @@ namespace BugTrackerLibrary.Models
 
         }
         public EnvironmentModel(
-            string EnvironmentName
+            string environmentName
            )
         {
-            EnvironmentName = EnvironmentName;
+            EnvironmentName = environmentName;
         }
     }
 }

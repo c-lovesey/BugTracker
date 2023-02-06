@@ -26,10 +26,9 @@ namespace BugTrackerLibrary.DataAccess
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
             {
                 var p = new DynamicParameters();
-                p.Add("@EnvironmentID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
                 p.Add("@EnvironmentName", model.EnvironmentName);
-                connection.Execute("dbo.spEnvironment_Insert", p, commandType: CommandType.StoredProcedure);
-                model.EnvironmentId = p.Get<int>("@EnvironmentId");
+                int environmentId = connection.QueryFirst<int>("dbo.spEnvironment_Insert", p, commandType: CommandType.StoredProcedure);
+                model.EnvironmentId = environmentId;
                 return model;
             }
         }

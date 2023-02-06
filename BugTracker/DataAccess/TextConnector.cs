@@ -21,5 +21,10 @@ namespace BugTrackerLibrary.DataAccess
             model.BugId = 1;
             return model;
         }
+        public EnvironmentModel CreateEnvironment(EnvironmentModel model)
+        {
+            model.EnvironmentId = 1;
+            return model;
+        }
     }
 }

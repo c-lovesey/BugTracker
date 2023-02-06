@@ -29,7 +29,15 @@ namespace BugTrackerLibrary
         }
         public static string CnnString(string name)//gets the connection string form the App.config file
         {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            if (ConfigurationManager.ConnectionStrings[name] != null)
+            {
+                return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            }
+            else
+            {
+                throw new InvalidOperationException($"Connection string '{name}' not found in app config file.");
+            }
         }
     }
+    
 }
