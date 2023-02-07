@@ -16,7 +16,7 @@ namespace BugTrackerUI
     public partial class BugReportForm : Form
     {
         private List<ApplicationModel> availableApplications = GlobalConfig.Connection.GetApplication_All();
-        private List<VersionModel> availableVersions = GlobalConfig.Connection.GetVersion_Application();
+        private List<VersionModel> availableVersions = new List<VersionModel>();
 
         public BugReportForm()
         {
@@ -28,6 +28,7 @@ namespace BugTrackerUI
             ApplicationCombobox.DataSource = null;
             ApplicationCombobox.DataSource = availableApplications;
             ApplicationCombobox.DisplayMember = "ApplicationName";
+            //TODO test this to see if selecting applications shows versions
             VersionComboBox.DataSource = null;
             VersionComboBox.DataSource = availableVersions;
             VersionComboBox.DisplayMember = "ApplicationVersion";
@@ -72,7 +73,7 @@ namespace BugTrackerUI
         {
             bool output = true;
 
-            if (VersionTextbox.Text.Length == 0)
+            if (VersionComboBox.Text.Length == 0)
             {
                 //say input version
                 output = false;
@@ -107,7 +108,8 @@ namespace BugTrackerUI
 
         private void ApplicationCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            availableVersions = GlobalConfig.Connection.GetVersion_Application();
+            WireUpLists();
         }
 
     }
