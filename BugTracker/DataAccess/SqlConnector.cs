@@ -101,5 +101,45 @@ namespace BugTrackerLibrary.DataAccess
             //    model.BugId = 1;
             //return model;
         }
+
+        public List<BugModel> GetBugReport_All()
+        {
+            List<BugModel> output;
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                output = connection.Query<BugModel>("dbo.spBugDetails_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
+            return output;
+        }
+
+        public List<EnvironmentModel> GetEnvironment_All()
+        {
+            List<EnvironmentModel> output;
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                output = connection.Query<EnvironmentModel>("dbo.spEnvironment_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
+            return output;
+        }
+
+        public List<ApplicationModel> GetApplication_All()
+        {
+            List<ApplicationModel> output;
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                output = connection.Query<ApplicationModel>("dbo.spApplication_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
+            return output;
+        }
+
+        public List<VersionModel> GetVersion_All()
+        {
+            List<VersionModel> output;
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                output = connection.Query<VersionModel>("dbo.spVersion_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
+            return output;
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace BugTrackerUI
         public AddVersionForm()
         {
             InitializeComponent();
-            SampleData();
+            //SampleData();
             WireUpLists();
         }
         private void SampleData()
