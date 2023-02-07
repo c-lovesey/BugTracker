@@ -31,12 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVersionForm));
             this.ConfirmCheckbox = new System.Windows.Forms.CheckBox();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.IDLabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.FormHeader = new System.Windows.Forms.Label();
             this.NameCombobox = new System.Windows.Forms.ComboBox();
-            this.IDCombobox = new System.Windows.Forms.ComboBox();
             this.VersionTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -47,7 +45,7 @@
             this.ConfirmCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConfirmCheckbox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ConfirmCheckbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ConfirmCheckbox.Location = new System.Drawing.Point(46, 330);
+            this.ConfirmCheckbox.Location = new System.Drawing.Point(28, 256);
             this.ConfirmCheckbox.Name = "ConfirmCheckbox";
             this.ConfirmCheckbox.Size = new System.Drawing.Size(193, 34);
             this.ConfirmCheckbox.TabIndex = 18;
@@ -60,22 +58,12 @@
             this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(273, 318);
+            this.SaveButton.Location = new System.Drawing.Point(255, 244);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(107, 56);
             this.SaveButton.TabIndex = 17;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
-            // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.IDLabel.Location = new System.Drawing.Point(12, 239);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(98, 30);
-            this.IDLabel.TabIndex = 13;
-            this.IDLabel.Text = "Letter ID:";
             // 
             // VersionLabel
             // 
@@ -93,16 +81,17 @@
             this.NameLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.NameLabel.Location = new System.Drawing.Point(12, 103);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(74, 30);
+            this.NameLabel.Size = new System.Drawing.Size(123, 30);
             this.NameLabel.TabIndex = 11;
-            this.NameLabel.Text = "Name:";
+            this.NameLabel.Text = "Application:";
+            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
             // FormHeader
             // 
             this.FormHeader.AutoSize = true;
             this.FormHeader.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormHeader.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.FormHeader.Location = new System.Drawing.Point(12, 9);
+            this.FormHeader.Location = new System.Drawing.Point(51, 9);
             this.FormHeader.Name = "FormHeader";
             this.FormHeader.Size = new System.Drawing.Size(311, 47);
             this.FormHeader.TabIndex = 10;
@@ -111,22 +100,14 @@
             // NameCombobox
             // 
             this.NameCombobox.FormattingEnabled = true;
-            this.NameCombobox.Location = new System.Drawing.Point(109, 100);
+            this.NameCombobox.Location = new System.Drawing.Point(148, 100);
             this.NameCombobox.Name = "NameCombobox";
             this.NameCombobox.Size = new System.Drawing.Size(214, 38);
             this.NameCombobox.TabIndex = 19;
             // 
-            // IDCombobox
-            // 
-            this.IDCombobox.FormattingEnabled = true;
-            this.IDCombobox.Location = new System.Drawing.Point(109, 236);
-            this.IDCombobox.Name = "IDCombobox";
-            this.IDCombobox.Size = new System.Drawing.Size(214, 38);
-            this.IDCombobox.TabIndex = 21;
-            // 
             // VersionTextbox
             // 
-            this.VersionTextbox.Location = new System.Drawing.Point(109, 171);
+            this.VersionTextbox.Location = new System.Drawing.Point(148, 171);
             this.VersionTextbox.Name = "VersionTextbox";
             this.VersionTextbox.Size = new System.Drawing.Size(214, 35);
             this.VersionTextbox.TabIndex = 22;
@@ -138,11 +119,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(403, 389);
             this.Controls.Add(this.VersionTextbox);
-            this.Controls.Add(this.IDCombobox);
             this.Controls.Add(this.NameCombobox);
             this.Controls.Add(this.ConfirmCheckbox);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.FormHeader);
@@ -160,12 +139,10 @@
 
         private CheckBox ConfirmCheckbox;
         private Button SaveButton;
-        private Label IDLabel;
         private Label VersionLabel;
         private Label NameLabel;
         private Label FormHeader;
         private ComboBox NameCombobox;
-        private ComboBox IDCombobox;
         private TextBox VersionTextbox;
     }
 }

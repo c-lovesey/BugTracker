@@ -31,10 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateApplicationForm));
             this.FormHeader = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.VersionLabel = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
             this.NameTextbox = new System.Windows.Forms.TextBox();
-            this.VersionTextbox = new System.Windows.Forms.TextBox();
             this.IDTextbox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ConfirmCheckbox = new System.Windows.Forms.CheckBox();
@@ -62,21 +60,11 @@
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "Name:";
             // 
-            // VersionLabel
-            // 
-            this.VersionLabel.AutoSize = true;
-            this.VersionLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.VersionLabel.Location = new System.Drawing.Point(12, 171);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(86, 30);
-            this.VersionLabel.TabIndex = 2;
-            this.VersionLabel.Text = "Version:";
-            // 
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
             this.IDLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.IDLabel.Location = new System.Drawing.Point(12, 239);
+            this.IDLabel.Location = new System.Drawing.Point(12, 166);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(98, 30);
             this.IDLabel.TabIndex = 4;
@@ -89,16 +77,9 @@
             this.NameTextbox.Size = new System.Drawing.Size(271, 35);
             this.NameTextbox.TabIndex = 5;
             // 
-            // VersionTextbox
-            // 
-            this.VersionTextbox.Location = new System.Drawing.Point(109, 171);
-            this.VersionTextbox.Name = "VersionTextbox";
-            this.VersionTextbox.Size = new System.Drawing.Size(271, 35);
-            this.VersionTextbox.TabIndex = 6;
-            // 
             // IDTextbox
             // 
-            this.IDTextbox.Location = new System.Drawing.Point(109, 236);
+            this.IDTextbox.Location = new System.Drawing.Point(109, 163);
             this.IDTextbox.Name = "IDTextbox";
             this.IDTextbox.Size = new System.Drawing.Size(271, 35);
             this.IDTextbox.TabIndex = 7;
@@ -109,7 +90,7 @@
             this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(273, 318);
+            this.SaveButton.Location = new System.Drawing.Point(273, 244);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(107, 56);
             this.SaveButton.TabIndex = 8;
@@ -124,7 +105,7 @@
             this.ConfirmCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConfirmCheckbox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ConfirmCheckbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ConfirmCheckbox.Location = new System.Drawing.Point(46, 330);
+            this.ConfirmCheckbox.Location = new System.Drawing.Point(46, 256);
             this.ConfirmCheckbox.Name = "ConfirmCheckbox";
             this.ConfirmCheckbox.Size = new System.Drawing.Size(193, 34);
             this.ConfirmCheckbox.TabIndex = 9;
@@ -140,10 +121,8 @@
             this.Controls.Add(this.ConfirmCheckbox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.IDTextbox);
-            this.Controls.Add(this.VersionTextbox);
             this.Controls.Add(this.NameTextbox);
             this.Controls.Add(this.IDLabel);
-            this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.FormHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -161,10 +140,8 @@
 
         private Label FormHeader;
         private Label NameLabel;
-        private Label VersionLabel;
         private Label IDLabel;
         private TextBox NameTextbox;
-        private TextBox VersionTextbox;
         private TextBox IDTextbox;
         private Button SaveButton;
         private CheckBox ConfirmCheckbox;

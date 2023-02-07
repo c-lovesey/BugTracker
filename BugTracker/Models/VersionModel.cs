@@ -13,7 +13,20 @@ namespace BugTrackerLibrary.Models
 
         public int VersionId { get; set; }//version id
         public string VersionName { get; set; }//version name
-        public ApplicationModel Application { get; set; }//what application does it occur in
+        public string Application { get; set; }//what application does it occur in
 
+
+        public VersionModel()
+        {
+
+        }
+        public VersionModel(
+            string versionName,
+            string application
+           )
+        {
+            VersionName = versionName;
+            Application = application;
+        }
     }
 }
