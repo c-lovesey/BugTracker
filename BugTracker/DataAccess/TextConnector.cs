@@ -127,7 +127,18 @@ namespace BugTrackerLibrary.DataAccess
 
         public List<VersionModel> GetVersion_Application(ApplicationModel model)
         {
-            throw new NotImplementedException();
+            //TODO - Get all versions for a specific application with text connection
+            //TODO - Test this
+            List<VersionModel> versions = VersionFile.FullFilePath().LoadFile().ConvertToVersionModels();
+            List<VersionModel> output = new List<VersionModel>();
+            foreach (VersionModel version in versions)
+            {
+                if (version.Application == model.ApplicationName)
+                {
+                    output.Add(version);
+                }
+            }
+            return output;
         }
     }
 }
