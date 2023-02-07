@@ -20,6 +20,18 @@ namespace BugTrackerLibrary.DataAccess
         /// </summary>
         /// <param name="model">Report Information</param>
         /// <returns>The report info, including the unique id</returns>
+        /// 
+        public ApplicationModel CreateApplication(ApplicationModel model)
+        {
+            model.ApplicationId = 1;
+            return model;
+        }
+
+        public VersionModel CreateVersion(VersionModel model)
+        {
+            model.VersionId = 1;
+            return model;
+        }
         public BugModel CreateBugReport(BugModel model)
         {
             model.BugId = 1;

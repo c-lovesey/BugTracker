@@ -28,6 +28,7 @@ namespace BugTrackerLibrary.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@ApplicationName", model.ApplicationName);
+                p.Add("@ApplicationLetterID", model.ApplicationName);
                 int applicationId = connection.QueryFirst<int>("dbo.spApplication_Insert", p, commandType: CommandType.StoredProcedure);
                 model.ApplicationId = applicationId;
                 return model;

@@ -12,5 +12,7 @@ namespace BugTrackerLibrary.DataAccess
     {
         BugModel CreateBugReport(BugModel model);
         EnvironmentModel CreateEnvironment(EnvironmentModel model);
+        ApplicationModel CreateApplication(ApplicationModel model);
+        VersionModel CreateVersion(VersionModel model);
     }
 }

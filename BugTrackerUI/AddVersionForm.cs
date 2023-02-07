@@ -1,4 +1,5 @@
-﻿using BugTrackerLibrary.Models;
+﻿using BugTrackerLibrary.DataAccess;
+using BugTrackerLibrary.Models;
 using BugTrackerLibrary;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace BugTrackerUI
 {
@@ -24,10 +26,10 @@ namespace BugTrackerUI
             if (ValidateForm())
             {
                 VersionModel model = new VersionModel(VersionTextbox.Text,ApplicationCombobox.Text);
+
+                GlobalConfig.Connection.CreateVersion(model);
                 ApplicationCombobox.Text = "";
                 VersionTextbox.Text = "";
-                GlobalConfig.Connection.CreateVersion(model);
-
             }
             else
             {
@@ -38,9 +40,14 @@ namespace BugTrackerUI
         {
             bool output = true;
 
-            if (EnvironmentTextBox.Text.Length == 0)
+            if (VersionTextbox.Text.Length == 0)
             {
                 //say input version
+                output = false;
+            }
+            if (ApplicationCombobox.Text.Length == 0)
+            {
+                //say input application
                 output = false;
             }
             return output;
