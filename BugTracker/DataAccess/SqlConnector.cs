@@ -11,8 +11,10 @@ using Dapper;
 
 namespace BugTrackerLibrary.DataAccess
 {
+   
     public class SqlConnector : IDataConnection
     {
+        private const string db = "BugTracker";
         //TODO - Make the other creation methods for each model
         // TODO - Make the CreateBugReport method save to the database
         /// <summary>
@@ -24,7 +26,7 @@ namespace BugTrackerLibrary.DataAccess
 
         public ApplicationModel CreateApplication(ApplicationModel model)
         {
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@ApplicationName", model.ApplicationName);
@@ -36,7 +38,7 @@ namespace BugTrackerLibrary.DataAccess
         }
         public VersionModel CreateVersion (VersionModel model)
         {
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@VersionName", model.VersionName);
@@ -49,7 +51,7 @@ namespace BugTrackerLibrary.DataAccess
         }
         public EnvironmentModel CreateEnvironment(EnvironmentModel model)
         {
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@EnvironmentName", model.EnvironmentName);
@@ -62,7 +64,7 @@ namespace BugTrackerLibrary.DataAccess
         {
             //uses IDbConnection to create a connection to the database
             //the using staement protects against memory leaks
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 //TODO Create all correct inputs for this from the form or remove some
                 var p = new DynamicParameters();
@@ -105,7 +107,7 @@ namespace BugTrackerLibrary.DataAccess
         public List<BugModel> GetBugReport_All()
         {
             List<BugModel> output;
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<BugModel>("dbo.spBugDetails_GetAll", commandType: CommandType.StoredProcedure).ToList();
             }
@@ -115,7 +117,7 @@ namespace BugTrackerLibrary.DataAccess
         public List<EnvironmentModel> GetEnvironment_All()
         {
             List<EnvironmentModel> output;
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<EnvironmentModel>("dbo.spEnvironment_GetAll", commandType: CommandType.StoredProcedure).ToList();
             }
@@ -125,7 +127,7 @@ namespace BugTrackerLibrary.DataAccess
         public List<ApplicationModel> GetApplication_All()
         {
             List<ApplicationModel> output;
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<ApplicationModel>("dbo.spApplication_GetAll", commandType: CommandType.StoredProcedure).ToList();
             }
@@ -135,9 +137,19 @@ namespace BugTrackerLibrary.DataAccess
         public List<VersionModel> GetVersion_All()
         {
             List<VersionModel> output;
-            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<VersionModel>("dbo.spVersion_GetAll", commandType: CommandType.StoredProcedure).ToList();
+            }
+            return output;
+        }
+
+        public List<VersionModel> GetVersion_Application()
+        {
+            List<VersionModel> output;
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output = connection.Query<VersionModel>("dbo.spVersion_GetApplication", commandType: CommandType.StoredProcedure).ToList();
             }
             return output;
         }

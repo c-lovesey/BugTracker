@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugReportForm));
-            this.VersionTextbox = new System.Windows.Forms.TextBox();
             this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
             this.IDLabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
@@ -45,14 +44,8 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.PriorityCombobox = new System.Windows.Forms.ComboBox();
             this.BackButton = new System.Windows.Forms.Button();
+            this.VersionComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // VersionTextbox
-            // 
-            this.VersionTextbox.Location = new System.Drawing.Point(200, 171);
-            this.VersionTextbox.Name = "VersionTextbox";
-            this.VersionTextbox.Size = new System.Drawing.Size(214, 35);
-            this.VersionTextbox.TabIndex = 31;
             // 
             // ApplicationCombobox
             // 
@@ -209,12 +202,21 @@
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = false;
             // 
+            // VersionComboBox
+            // 
+            this.VersionComboBox.FormattingEnabled = true;
+            this.VersionComboBox.Location = new System.Drawing.Point(200, 168);
+            this.VersionComboBox.Name = "VersionComboBox";
+            this.VersionComboBox.Size = new System.Drawing.Size(214, 38);
+            this.VersionComboBox.TabIndex = 44;
+            // 
             // BugReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1371, 900);
+            this.Controls.Add(this.VersionComboBox);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.PriorityCombobox);
             this.Controls.Add(this.SaveButton);
@@ -225,7 +227,6 @@
             this.Controls.Add(this.EnvironmentCombobox);
             this.Controls.Add(this.EnvironmentLabel);
             this.Controls.Add(this.DescriptionTextbox);
-            this.Controls.Add(this.VersionTextbox);
             this.Controls.Add(this.ApplicationCombobox);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.VersionLabel);
@@ -242,8 +243,6 @@
         }
 
         #endregion
-
-        private TextBox VersionTextbox;
         private ComboBox ApplicationCombobox;
         private Label IDLabel;
         private Label VersionLabel;
@@ -259,5 +258,6 @@
         private Button SaveButton;
         private ComboBox PriorityCombobox;
         private Button BackButton;
+        private ComboBox VersionComboBox;
     }
 }

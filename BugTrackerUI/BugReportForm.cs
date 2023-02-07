@@ -15,17 +15,30 @@ namespace BugTrackerUI
 {
     public partial class BugReportForm : Form
     {
+        private List<ApplicationModel> availableApplications = GlobalConfig.Connection.GetApplication_All();
+        private List<VersionModel> availableVersions = GlobalConfig.Connection.GetVersion_Application();
+
         public BugReportForm()
         {
             InitializeComponent();
+            WireUpLists();
+        }
+        private void WireUpLists()
+        {
+            ApplicationCombobox.DataSource = null;
+            ApplicationCombobox.DataSource = availableApplications;
+            ApplicationCombobox.DisplayMember = "ApplicationName";
+            VersionComboBox.DataSource = null;
+            VersionComboBox.DataSource = availableVersions;
+            VersionComboBox.DisplayMember = "ApplicationVersion";
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
                 BugModel model = new BugModel(
-                    ApplicationCombobox.Text, 
-                    VersionTextbox.Text,
+                    ApplicationCombobox.Text,
+                    VersionComboBox.Text,
                     true, "Unresolved", 
                     EnvironmentCombobox.Text, 
                     PriorityCombobox.Text, 
@@ -33,7 +46,7 @@ namespace BugTrackerUI
 
                 GlobalConfig.Connection.CreateBugReport(model);
                 ApplicationCombobox.Text = "";
-                VersionTextbox.Text = "";
+                VersionComboBox.Text = "";
                 EnvironmentCombobox.Text = "";
                 PriorityCombobox.Text = "";
                 DescriptionTextbox.Text = "";

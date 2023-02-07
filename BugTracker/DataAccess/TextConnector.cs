@@ -104,5 +104,30 @@ namespace BugTrackerLibrary.DataAccess
 
             return model;
         }
+
+        public List<BugModel> GetBugReport_All()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<EnvironmentModel> GetEnvironment_All()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ApplicationModel> GetApplication_All()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VersionModel> GetVersion_All()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VersionModel> GetVersion_Application()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

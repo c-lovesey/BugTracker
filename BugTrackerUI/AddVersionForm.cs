@@ -16,13 +16,14 @@ namespace BugTrackerUI
 {
     public partial class AddVersionForm : Form
     {
-        private List<ApplicationModel> availableApplications = new List<ApplicationModel>();
+        private List<ApplicationModel> availableApplications = GlobalConfig.Connection.GetApplication_All();
         public AddVersionForm()
         {
             InitializeComponent();
             //SampleData();
             WireUpLists();
         }
+
         private void SampleData()
         {
             availableApplications.Add(new ApplicationModel("Application 1", "A1"));
