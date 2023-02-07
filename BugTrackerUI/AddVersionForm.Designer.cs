@@ -34,7 +34,7 @@
             this.VersionLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.FormHeader = new System.Windows.Forms.Label();
-            this.NameCombobox = new System.Windows.Forms.ComboBox();
+            this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
             this.VersionTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -64,6 +64,7 @@
             this.SaveButton.TabIndex = 17;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click_1);
             // 
             // VersionLabel
             // 
@@ -91,19 +92,19 @@
             this.FormHeader.AutoSize = true;
             this.FormHeader.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormHeader.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.FormHeader.Location = new System.Drawing.Point(51, 9);
+            this.FormHeader.Location = new System.Drawing.Point(41, 9);
             this.FormHeader.Name = "FormHeader";
             this.FormHeader.Size = new System.Drawing.Size(311, 47);
             this.FormHeader.TabIndex = 10;
             this.FormHeader.Text = "Create New Version";
             // 
-            // NameCombobox
+            // ApplicationCombobox
             // 
-            this.NameCombobox.FormattingEnabled = true;
-            this.NameCombobox.Location = new System.Drawing.Point(148, 100);
-            this.NameCombobox.Name = "NameCombobox";
-            this.NameCombobox.Size = new System.Drawing.Size(214, 38);
-            this.NameCombobox.TabIndex = 19;
+            this.ApplicationCombobox.FormattingEnabled = true;
+            this.ApplicationCombobox.Location = new System.Drawing.Point(148, 100);
+            this.ApplicationCombobox.Name = "ApplicationCombobox";
+            this.ApplicationCombobox.Size = new System.Drawing.Size(214, 38);
+            this.ApplicationCombobox.TabIndex = 19;
             // 
             // VersionTextbox
             // 
@@ -119,7 +120,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(403, 389);
             this.Controls.Add(this.VersionTextbox);
-            this.Controls.Add(this.NameCombobox);
+            this.Controls.Add(this.ApplicationCombobox);
             this.Controls.Add(this.ConfirmCheckbox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.VersionLabel);
@@ -142,7 +143,7 @@
         private Label VersionLabel;
         private Label NameLabel;
         private Label FormHeader;
-        private ComboBox NameCombobox;
+        private ComboBox ApplicationCombobox;
         private TextBox VersionTextbox;
     }
 }

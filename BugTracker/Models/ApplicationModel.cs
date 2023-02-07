@@ -12,7 +12,18 @@ namespace BugTrackerLibrary.Models
         // has a list of versions associated with the application
         public int ApplicationId { get; set; }//Id for the application
         public string ApplicationName { get; set; }//name of the application
-        public List<VersionModel> Version { get; set; }//versions associated with the application
+                                                   //public List<VersionModel> Version { get; set; }//versions associated with the application
 
+
+        public ApplicationModel()
+        {
+
+        }
+        public ApplicationModel(
+            string applicationName
+           )
+        {
+            ApplicationName = applicationName;
+        }
     }
 }

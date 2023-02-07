@@ -21,6 +21,30 @@ namespace BugTrackerLibrary.DataAccess
         /// <param name="model">Report Information</param>
         /// <returns>The report info, including the unique id</returns>
         /// 
+
+        public ApplicationModel CreateApplication(ApplicationModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@ApplicationName", model.ApplicationName);
+                int applicationId = connection.QueryFirst<int>("dbo.spApplication_Insert", p, commandType: CommandType.StoredProcedure);
+                model.ApplicationId = applicationId;
+                return model;
+            }
+        }
+        public VersionModel CreateVersion (VersionModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@VersionName", model.VersionName);
+                p.Add("@ApplicationID", model.Application);
+                int versionId = connection.QueryFirst<int>("dbo.spVersion_Insert", p, commandType: CommandType.StoredProcedure);
+                model.VersionId = versionId;
+                return model;
+            }
+        }
         public EnvironmentModel CreateEnvironment(EnvironmentModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
