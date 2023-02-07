@@ -147,10 +147,10 @@ namespace BugTrackerLibrary.DataAccess
         public List<VersionModel> GetVersion_Application(ApplicationModel model)
         {
             //TODO Test this
-            int findId = model.ApplicationId;
+            string findName = model.ApplicationName;
             List<VersionModel> output;
             var p = new DynamicParameters();
-            p.Add("@ApplicationID", findId);
+            p.Add("@ApplicationName", findName);
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<VersionModel>("dbo.spVersion_GetApplication", p, commandType: CommandType.StoredProcedure).ToList();
