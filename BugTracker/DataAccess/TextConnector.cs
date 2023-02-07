@@ -107,25 +107,25 @@ namespace BugTrackerLibrary.DataAccess
 
         public List<BugModel> GetBugReport_All()
         {
-            throw new NotImplementedException();
+            return BugReportFile.FullFilePath().LoadFile().ConvertToBugModels();
         }
 
         public List<EnvironmentModel> GetEnvironment_All()
         {
-            throw new NotImplementedException();
+            return EnvironmentFile.FullFilePath().LoadFile().ConvertToEnvironmentModels();
         }
 
         public List<ApplicationModel> GetApplication_All()
         {
-            throw new NotImplementedException();
+            return ApplicationFile.FullFilePath().LoadFile().ConvertToApplicationModels();
         }
 
         public List<VersionModel> GetVersion_All()
         {
-            throw new NotImplementedException();
+            return VersionFile.FullFilePath().LoadFile().ConvertToVersionModels();
         }
 
-        public List<VersionModel> GetVersion_Application()
+        public List<VersionModel> GetVersion_Application(ApplicationModel model)
         {
             throw new NotImplementedException();
         }

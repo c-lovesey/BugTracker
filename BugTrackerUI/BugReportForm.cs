@@ -108,7 +108,8 @@ namespace BugTrackerUI
 
         private void ApplicationCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            availableVersions = GlobalConfig.Connection.GetVersion_Application();
+            ApplicationModel app = (ApplicationModel)ApplicationCombobox.SelectedItem;
+            availableVersions = GlobalConfig.Connection.GetVersion_Application(app);
             WireUpLists();
         }
 
