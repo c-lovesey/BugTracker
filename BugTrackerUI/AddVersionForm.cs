@@ -26,7 +26,6 @@ namespace BugTrackerUI
             if (ValidateForm())
             {
                 VersionModel model = new VersionModel(VersionTextbox.Text,ApplicationCombobox.Text);
-
                 GlobalConfig.Connection.CreateVersion(model);
                 ApplicationCombobox.Text = "";
                 VersionTextbox.Text = "";

@@ -13,6 +13,8 @@ namespace BugTrackerLibrary.DataAccess
 
         private const string BugReportFile = "BugReportFile.csv";
         private const string EnvironmentFile = "EnvironmentFile.csv";
+        private const string VersionFile = "VersionFile.csv";
+        private const string ApplicationFile = "ApplicationFile.csv";
 
         // TODO: - Make the CreateBugReport method save to text file
         /// <summary>
@@ -23,18 +25,60 @@ namespace BugTrackerLibrary.DataAccess
         /// 
         public ApplicationModel CreateApplication(ApplicationModel model)
         {
-            model.ApplicationId = 1;
+            List<ApplicationModel> applications = new List<ApplicationModel>();
+
+            int currentId = 1;
+
+            if (applications.Count > 0)
+            {
+                currentId = applications.OrderByDescending(x => x.ApplicationId).First().ApplicationId + 1;
+            }
+            model.ApplicationId = currentId;
+
+            applications.Add(model);
+            applications.SaveToApplicationFile(ApplicationFile);
             return model;
         }
 
         public VersionModel CreateVersion(VersionModel model)
         {
-            model.VersionId = 1;
+            List<VersionModel> versions = new List<VersionModel>();
+
+            int currentId = 1;
+
+            if (versions.Count > 0)
+            {
+                currentId = versions.OrderByDescending(x => x.VersionId).First().VersionId + 1;
+            }
+            model.VersionId = currentId;
+            
+            versions.Add(model);
+            versions.SaveToVersionFile(VersionFile);
             return model;
+
+
         }
         public BugModel CreateBugReport(BugModel model)
         {
-            model.BugId = 1;
+            //Load the text file and convert the text to List<BugModel>
+            List<BugModel> bugReports = BugReportFile.FullFilePath().LoadFile().ConvertToBugModels();
+
+            //Find the max ID
+            int currentId = 1;
+
+            if (bugReports.Count > 0)
+            {
+                currentId = bugReports.OrderByDescending(x => x.BugId).First().BugId + 1;
+            }
+            model.BugId = currentId;
+
+            //Add the new record with the new ID (max + 1)
+            bugReports.Add(model);
+
+            //Convert the bugReports to a list<string>
+            //Save the list<string> to the text file
+            bugReports.SaveToBugReportFile(BugReportFile);
+
             return model;
         }
         public EnvironmentModel CreateEnvironment(EnvironmentModel model)
