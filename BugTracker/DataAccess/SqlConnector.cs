@@ -40,7 +40,8 @@ namespace BugTrackerLibrary.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@VersionName", model.VersionName);
-                p.Add("@ApplicationID", model.Application);
+                //TODO: Find a way to get the application ID using the name of the application
+                //p.Add("@ApplicationID", model.Application);
                 int versionId = connection.QueryFirst<int>("dbo.spVersion_Insert", p, commandType: CommandType.StoredProcedure);
                 model.VersionId = versionId;
                 return model;

@@ -16,11 +16,24 @@ namespace BugTrackerUI
 {
     public partial class AddVersionForm : Form
     {
+        private List<ApplicationModel> availableApplications = new List<ApplicationModel>();
         public AddVersionForm()
         {
             InitializeComponent();
+            SampleData();
+            WireUpLists();
         }
-
+        private void SampleData()
+        {
+            availableApplications.Add(new ApplicationModel("Application 1", "A1"));
+        }
+        private void WireUpLists()
+        {
+            ApplicationCombobox.DataSource = null;
+            ApplicationCombobox.DataSource = availableApplications;
+            ApplicationCombobox.DisplayMember = "ApplicationName";
+        }
+        
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -54,12 +67,17 @@ namespace BugTrackerUI
         }
     
 
-    private void NameLabel_Click(object sender, EventArgs e)
+        private void NameLabel_Click(object sender, EventArgs e)
         {
 
         }
 
         private void SaveButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ApplicationCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

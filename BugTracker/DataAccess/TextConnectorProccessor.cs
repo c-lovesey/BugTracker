@@ -62,8 +62,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
                 VersionModel v = new VersionModel();
                 v.VersionId = int.Parse(cols[0]);
                 v.VersionName = cols[1];
-                v.VersionLetterID = cols[2];
-                v.ApplicationId = int.Parse(cols[3]);
+                v.Application = cols[2];
                 output.Add(v);
             }
 
@@ -76,7 +75,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
 
             foreach (VersionModel v in models)
             {
-                lines.Add($"{v.VersionId},{v.VersionName},{v.VersionLetterID},{v.ApplicationId}");
+                lines.Add($"{v.VersionId},{v.VersionName},{v.Application}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
@@ -118,19 +117,19 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
                 string[] cols = line.Split(',');
                 BugModel b = new BugModel();
                 b.BugId = int.Parse(cols[0]);
-                b.BugName = cols[1];
-                b.BugLetterID = cols[2];
+                //b.BugName = cols[1];
+               // b.BugLetterID = cols[2];
                 b.BugDescription = cols[3];
-                b.BugStatus = cols[4];
+                //b.BugStatus = cols[4];
                 b.BugPriority = cols[5];
-                b.BugSeverity = cols[6];
+                //b.BugSeverity = cols[6];
                 b.BugEnvironment = cols[7];
-                b.BugVersion = cols[8];
-                b.BugApplication = cols[9];
-                b.BugDate = DateTime.Parse(cols[10]);
-                b.BugReporter = cols[11];
-                b.BugAssignee = cols[12];
-                b.BugComments = cols[13];
+                //b.BugVersion = cols[8];
+                //b.BugApplication = cols[9];
+               //b.BugDate = DateTime.Parse(cols[10]);
+               // b.BugReporter = cols[11];
+               // b.BugAssignee = cols[12];
+               //b.BugComments = cols[13];
                 output.Add(b);
             }
 
@@ -143,7 +142,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
 
             foreach (BugModel b in models)
             {
-                lines.Add($"{b.BugId},{b.BugName},{b.BugLetterID},{b.BugDescription},{b.BugStatus},{b.BugPriority},{b.BugSeverity},{b.BugEnvironment},{b.BugVersion},{b.BugApplication},{b.BugDate},{b.BugReporter},{b.BugAssignee},{b.BugComments}");
+                //lines.Add($"{b.BugId},{b.BugName},{b.BugLetterID},{b.BugDescription},{b.BugStatus},{b.BugPriority},{b.BugSeverity},{b.BugEnvironment},{b.BugVersion},{b.BugApplication},{b.BugDate},{b.BugReporter},{b.BugAssignee},{b.BugComments}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }

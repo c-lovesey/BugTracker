@@ -77,7 +77,7 @@ namespace BugTrackerLibrary.DataAccess
 
             //Convert the bugReports to a list<string>
             //Save the list<string> to the text file
-            bugReports.SaveToBugReportFile(BugReportFile);
+            bugReports.SaveToBugFile(BugReportFile);
 
             return model;
         }

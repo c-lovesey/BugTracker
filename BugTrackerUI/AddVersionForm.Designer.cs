@@ -105,6 +105,7 @@
             this.ApplicationCombobox.Name = "ApplicationCombobox";
             this.ApplicationCombobox.Size = new System.Drawing.Size(214, 38);
             this.ApplicationCombobox.TabIndex = 19;
+            this.ApplicationCombobox.SelectedIndexChanged += new System.EventHandler(this.ApplicationCombobox_SelectedIndexChanged);
             // 
             // VersionTextbox
             // 
