@@ -1,4 +1,9 @@
+using BugTrackerLibrary.Models;
+using BugTrackerLibrary;
+using Dapper;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace BugTrackerUI
 {
@@ -20,6 +25,15 @@ namespace BugTrackerUI
             Application.Run(new BugReportForm());
             //Application.Run(new BugViewerForm());
 
+            //using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            //{
+            //    var p = new DynamicParameters();
+            //    p.Add("@SearchString", searchString);
+
+            //    List<BugModel> bugReports = connection.Query<BugModel>("spBugReports_Search", p, commandType: CommandType.StoredProcedure).ToList();
+
+            //    return bugReports;
+            //}
         }
     }
 }
