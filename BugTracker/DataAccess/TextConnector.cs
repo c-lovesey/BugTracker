@@ -48,9 +48,9 @@ namespace BugTrackerLibrary.DataAccess
 
             if (versions.Count > 0)
             {
-                currentId = versions.OrderByDescending(x => x.VersionId).First().VersionId + 1;
+                currentId = versions.OrderByDescending(x => x.id).First().id + 1;
             }
-            model.VersionId = currentId;
+            model.id = currentId;
             
             versions.Add(model);
             versions.SaveToVersionFile(VersionFile);
@@ -68,9 +68,9 @@ namespace BugTrackerLibrary.DataAccess
 
             if (bugReports.Count > 0)
             {
-                currentId = bugReports.OrderByDescending(x => x.BugId).First().BugId + 1;
+                currentId = bugReports.OrderByDescending(x => x.id).First().id + 1;
             }
-            model.BugId = currentId;
+            model.id = currentId;
 
             //Add the new record with the new ID (max + 1)
             bugReports.Add(model);
@@ -92,10 +92,10 @@ namespace BugTrackerLibrary.DataAccess
             //Find the max id
             if (environment.Count > 0)
             {
-                currentId = environment.OrderByDescending(x => x.EnvironmentId).First().EnvironmentId + 1;
+                currentId = environment.OrderByDescending(x => x.id).First().id + 1;
             }
             //Add the new record with the new id (max + 1)
-            model.EnvironmentId = currentId;
+            model.id = currentId;
 
             environment.Add(model);
             //Convert the List<EnvironmentModel> to a list<string>
@@ -142,6 +142,11 @@ namespace BugTrackerLibrary.DataAccess
         }
 
         public VersionModel CreateVersion(VersionModel model, int ApplicationId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VersionModel> GetVersion_Application(int id)
         {
             throw new NotImplementedException();
         }

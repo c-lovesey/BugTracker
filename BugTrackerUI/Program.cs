@@ -17,7 +17,7 @@ namespace BugTrackerUI
             //initialize database connections
             BugTrackerLibrary.GlobalConfig.InitializeConnections(BugTrackerLibrary.DatabaseType.Sql);
 
-            Application.Run(new AddVersionForm());
+            Application.Run(new BugReportForm());
             //Application.Run(new BugViewerForm());
 
         }

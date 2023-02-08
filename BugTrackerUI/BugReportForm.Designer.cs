@@ -44,13 +44,27 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.PriorityCombobox = new System.Windows.Forms.ComboBox();
             this.BackButton = new System.Windows.Forms.Button();
-            this.VersionComboBox = new System.Windows.Forms.ComboBox();
+            this.CategoryCombobox = new System.Windows.Forms.ComboBox();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.ConfirmCombobox = new System.Windows.Forms.ComboBox();
+            this.ConfirmationStatusLabel = new System.Windows.Forms.Label();
+            this.LabelsCombobox = new System.Windows.Forms.ComboBox();
+            this.LabelsLabel = new System.Windows.Forms.Label();
+            this.FixedCombobox = new System.Windows.Forms.ComboBox();
+            this.FixedLabel = new System.Windows.Forms.Label();
+            this.ResolutionCombobox = new System.Windows.Forms.ComboBox();
+            this.ResolutionLabel = new System.Windows.Forms.Label();
+            this.StatusCombobox = new System.Windows.Forms.ComboBox();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.VersionCheckedListbox = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ApplicationCombobox
             // 
             this.ApplicationCombobox.FormattingEnabled = true;
-            this.ApplicationCombobox.Location = new System.Drawing.Point(200, 95);
+            this.ApplicationCombobox.Location = new System.Drawing.Point(195, 119);
             this.ApplicationCombobox.Name = "ApplicationCombobox";
             this.ApplicationCombobox.Size = new System.Drawing.Size(214, 38);
             this.ApplicationCombobox.TabIndex = 29;
@@ -60,7 +74,7 @@
             // 
             this.IDLabel.AutoSize = true;
             this.IDLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.IDLabel.Location = new System.Drawing.Point(12, 228);
+            this.IDLabel.Location = new System.Drawing.Point(12, 310);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(190, 30);
             this.IDLabel.TabIndex = 26;
@@ -70,7 +84,7 @@
             // 
             this.VersionLabel.AutoSize = true;
             this.VersionLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.VersionLabel.Location = new System.Drawing.Point(12, 171);
+            this.VersionLabel.Location = new System.Drawing.Point(12, 169);
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(157, 30);
             this.VersionLabel.TabIndex = 25;
@@ -80,7 +94,7 @@
             // 
             this.ApplicationLabel.AutoSize = true;
             this.ApplicationLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ApplicationLabel.Location = new System.Drawing.Point(12, 103);
+            this.ApplicationLabel.Location = new System.Drawing.Point(47, 119);
             this.ApplicationLabel.Name = "ApplicationLabel";
             this.ApplicationLabel.Size = new System.Drawing.Size(123, 30);
             this.ApplicationLabel.TabIndex = 24;
@@ -99,7 +113,7 @@
             // 
             // DescriptionTextbox
             // 
-            this.DescriptionTextbox.Location = new System.Drawing.Point(12, 271);
+            this.DescriptionTextbox.Location = new System.Drawing.Point(12, 353);
             this.DescriptionTextbox.Multiline = true;
             this.DescriptionTextbox.Name = "DescriptionTextbox";
             this.DescriptionTextbox.Size = new System.Drawing.Size(1039, 146);
@@ -110,7 +124,7 @@
             // 
             this.EnvironmentLabel.AutoSize = true;
             this.EnvironmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.EnvironmentLabel.Location = new System.Drawing.Point(12, 430);
+            this.EnvironmentLabel.Location = new System.Drawing.Point(12, 512);
             this.EnvironmentLabel.Name = "EnvironmentLabel";
             this.EnvironmentLabel.Size = new System.Drawing.Size(135, 30);
             this.EnvironmentLabel.TabIndex = 34;
@@ -120,7 +134,7 @@
             // EnvironmentCombobox
             // 
             this.EnvironmentCombobox.FormattingEnabled = true;
-            this.EnvironmentCombobox.Location = new System.Drawing.Point(14, 472);
+            this.EnvironmentCombobox.Location = new System.Drawing.Point(14, 554);
             this.EnvironmentCombobox.Name = "EnvironmentCombobox";
             this.EnvironmentCombobox.Size = new System.Drawing.Size(267, 38);
             this.EnvironmentCombobox.TabIndex = 35;
@@ -129,7 +143,7 @@
             // 
             this.AttatchmentLabel.AutoSize = true;
             this.AttatchmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.AttatchmentLabel.Location = new System.Drawing.Point(12, 530);
+            this.AttatchmentLabel.Location = new System.Drawing.Point(12, 612);
             this.AttatchmentLabel.Name = "AttatchmentLabel";
             this.AttatchmentLabel.Size = new System.Drawing.Size(134, 30);
             this.AttatchmentLabel.TabIndex = 36;
@@ -152,7 +166,7 @@
             // 
             this.PriorityLable.AutoSize = true;
             this.PriorityLable.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.PriorityLable.Location = new System.Drawing.Point(13, 778);
+            this.PriorityLable.Location = new System.Drawing.Point(13, 860);
             this.PriorityLable.Name = "PriorityLable";
             this.PriorityLable.Size = new System.Drawing.Size(83, 30);
             this.PriorityLable.TabIndex = 38;
@@ -161,7 +175,7 @@
             // 
             // AttatchmentRichTextbox
             // 
-            this.AttatchmentRichTextbox.Location = new System.Drawing.Point(14, 563);
+            this.AttatchmentRichTextbox.Location = new System.Drawing.Point(14, 645);
             this.AttatchmentRichTextbox.Name = "AttatchmentRichTextbox";
             this.AttatchmentRichTextbox.Size = new System.Drawing.Size(888, 212);
             this.AttatchmentRichTextbox.TabIndex = 40;
@@ -173,7 +187,7 @@
             this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(772, 826);
+            this.SaveButton.Location = new System.Drawing.Point(1111, 898);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(130, 38);
             this.SaveButton.TabIndex = 41;
@@ -184,7 +198,7 @@
             // PriorityCombobox
             // 
             this.PriorityCombobox.FormattingEnabled = true;
-            this.PriorityCombobox.Location = new System.Drawing.Point(14, 826);
+            this.PriorityCombobox.Location = new System.Drawing.Point(14, 908);
             this.PriorityCombobox.Name = "PriorityCombobox";
             this.PriorityCombobox.Size = new System.Drawing.Size(214, 38);
             this.PriorityCombobox.TabIndex = 42;
@@ -195,28 +209,176 @@
             this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BackButton.Location = new System.Drawing.Point(551, 826);
+            this.BackButton.Location = new System.Drawing.Point(960, 898);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(130, 38);
             this.BackButton.TabIndex = 43;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = false;
             // 
-            // VersionComboBox
+            // CategoryCombobox
             // 
-            this.VersionComboBox.FormattingEnabled = true;
-            this.VersionComboBox.Location = new System.Drawing.Point(200, 168);
-            this.VersionComboBox.Name = "VersionComboBox";
-            this.VersionComboBox.Size = new System.Drawing.Size(214, 38);
-            this.VersionComboBox.TabIndex = 44;
+            this.CategoryCombobox.FormattingEnabled = true;
+            this.CategoryCombobox.Location = new System.Drawing.Point(616, 218);
+            this.CategoryCombobox.Name = "CategoryCombobox";
+            this.CategoryCombobox.Size = new System.Drawing.Size(233, 38);
+            this.CategoryCombobox.TabIndex = 78;
+            // 
+            // CategoryLabel
+            // 
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CategoryLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.CategoryLabel.Location = new System.Drawing.Point(507, 231);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(92, 25);
+            this.CategoryLabel.TabIndex = 77;
+            this.CategoryLabel.Text = "Category:";
+            // 
+            // ConfirmCombobox
+            // 
+            this.ConfirmCombobox.FormattingEnabled = true;
+            this.ConfirmCombobox.Location = new System.Drawing.Point(616, 166);
+            this.ConfirmCombobox.Name = "ConfirmCombobox";
+            this.ConfirmCombobox.Size = new System.Drawing.Size(233, 38);
+            this.ConfirmCombobox.TabIndex = 76;
+            // 
+            // ConfirmationStatusLabel
+            // 
+            this.ConfirmationStatusLabel.AutoSize = true;
+            this.ConfirmationStatusLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ConfirmationStatusLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.ConfirmationStatusLabel.Location = new System.Drawing.Point(417, 179);
+            this.ConfirmationStatusLabel.Name = "ConfirmationStatusLabel";
+            this.ConfirmationStatusLabel.Size = new System.Drawing.Size(182, 25);
+            this.ConfirmationStatusLabel.TabIndex = 75;
+            this.ConfirmationStatusLabel.Text = "Confirmation Status:";
+            // 
+            // LabelsCombobox
+            // 
+            this.LabelsCombobox.FormattingEnabled = true;
+            this.LabelsCombobox.Location = new System.Drawing.Point(616, 116);
+            this.LabelsCombobox.Name = "LabelsCombobox";
+            this.LabelsCombobox.Size = new System.Drawing.Size(233, 38);
+            this.LabelsCombobox.TabIndex = 74;
+            // 
+            // LabelsLabel
+            // 
+            this.LabelsLabel.AutoSize = true;
+            this.LabelsLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelsLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.LabelsLabel.Location = new System.Drawing.Point(530, 126);
+            this.LabelsLabel.Name = "LabelsLabel";
+            this.LabelsLabel.Size = new System.Drawing.Size(69, 25);
+            this.LabelsLabel.TabIndex = 73;
+            this.LabelsLabel.Text = "Labels:";
+            // 
+            // FixedCombobox
+            // 
+            this.FixedCombobox.FormattingEnabled = true;
+            this.FixedCombobox.Location = new System.Drawing.Point(1041, 218);
+            this.FixedCombobox.Name = "FixedCombobox";
+            this.FixedCombobox.Size = new System.Drawing.Size(233, 38);
+            this.FixedCombobox.TabIndex = 72;
+            // 
+            // FixedLabel
+            // 
+            this.FixedLabel.AutoSize = true;
+            this.FixedLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FixedLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.FixedLabel.Location = new System.Drawing.Point(898, 231);
+            this.FixedLabel.Name = "FixedLabel";
+            this.FixedLabel.Size = new System.Drawing.Size(128, 25);
+            this.FixedLabel.TabIndex = 71;
+            this.FixedLabel.Text = "Fixed Version:";
+            // 
+            // ResolutionCombobox
+            // 
+            this.ResolutionCombobox.FormattingEnabled = true;
+            this.ResolutionCombobox.Location = new System.Drawing.Point(1041, 169);
+            this.ResolutionCombobox.Name = "ResolutionCombobox";
+            this.ResolutionCombobox.Size = new System.Drawing.Size(233, 38);
+            this.ResolutionCombobox.TabIndex = 70;
+            // 
+            // ResolutionLabel
+            // 
+            this.ResolutionLabel.AutoSize = true;
+            this.ResolutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ResolutionLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.ResolutionLabel.Location = new System.Drawing.Point(922, 176);
+            this.ResolutionLabel.Name = "ResolutionLabel";
+            this.ResolutionLabel.Size = new System.Drawing.Size(104, 25);
+            this.ResolutionLabel.TabIndex = 69;
+            this.ResolutionLabel.Text = "Resolution:";
+            // 
+            // StatusCombobox
+            // 
+            this.StatusCombobox.FormattingEnabled = true;
+            this.StatusCombobox.Location = new System.Drawing.Point(1041, 122);
+            this.StatusCombobox.Name = "StatusCombobox";
+            this.StatusCombobox.Size = new System.Drawing.Size(233, 38);
+            this.StatusCombobox.TabIndex = 68;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StatusLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.StatusLabel.Location = new System.Drawing.Point(960, 127);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(66, 25);
+            this.StatusLabel.TabIndex = 67;
+            this.StatusLabel.Text = "Status:";
+            // 
+            // VersionCheckedListbox
+            // 
+            this.VersionCheckedListbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.VersionCheckedListbox.FormattingEnabled = true;
+            this.VersionCheckedListbox.Location = new System.Drawing.Point(195, 164);
+            this.VersionCheckedListbox.Name = "VersionCheckedListbox";
+            this.VersionCheckedListbox.Size = new System.Drawing.Size(214, 124);
+            this.VersionCheckedListbox.TabIndex = 66;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Location = new System.Drawing.Point(113, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 30);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Title:";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // TitleTextBox
+            // 
+            this.TitleTextBox.Location = new System.Drawing.Point(195, 68);
+            this.TitleTextBox.Multiline = true;
+            this.TitleTextBox.Name = "TitleTextBox";
+            this.TitleTextBox.Size = new System.Drawing.Size(214, 34);
+            this.TitleTextBox.TabIndex = 80;
             // 
             // BugReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1371, 900);
-            this.Controls.Add(this.VersionComboBox);
+            this.ClientSize = new System.Drawing.Size(1371, 972);
+            this.Controls.Add(this.TitleTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CategoryCombobox);
+            this.Controls.Add(this.CategoryLabel);
+            this.Controls.Add(this.ConfirmCombobox);
+            this.Controls.Add(this.ConfirmationStatusLabel);
+            this.Controls.Add(this.LabelsCombobox);
+            this.Controls.Add(this.LabelsLabel);
+            this.Controls.Add(this.FixedCombobox);
+            this.Controls.Add(this.FixedLabel);
+            this.Controls.Add(this.ResolutionCombobox);
+            this.Controls.Add(this.ResolutionLabel);
+            this.Controls.Add(this.StatusCombobox);
+            this.Controls.Add(this.StatusLabel);
+            this.Controls.Add(this.VersionCheckedListbox);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.PriorityCombobox);
             this.Controls.Add(this.SaveButton);
@@ -258,6 +420,20 @@
         private Button SaveButton;
         private ComboBox PriorityCombobox;
         private Button BackButton;
-        private ComboBox VersionComboBox;
+        private ComboBox CategoryCombobox;
+        private Label CategoryLabel;
+        private ComboBox ConfirmCombobox;
+        private Label ConfirmationStatusLabel;
+        private ComboBox LabelsCombobox;
+        private Label LabelsLabel;
+        private ComboBox FixedCombobox;
+        private Label FixedLabel;
+        private ComboBox ResolutionCombobox;
+        private Label ResolutionLabel;
+        private ComboBox StatusCombobox;
+        private Label StatusLabel;
+        private CheckedListBox VersionCheckedListbox;
+        private Label label1;
+        private TextBox TitleTextBox;
     }
 }

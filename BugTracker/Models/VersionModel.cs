@@ -11,7 +11,7 @@ namespace BugTrackerLibrary.Models
         // this is the model for creating the version, this represents
         // one version which is tied to an application
 
-        public int VersionId { get; set; }//version id
+        public int id { get; set; }//version id
         public string VersionName { get; set; }//version name
         public string ApplicationId { get; set; }//what application does it occur in
 

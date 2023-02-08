@@ -46,7 +46,7 @@ namespace BugTrackerLibrary.DataAccess
                 //TODO: Find a way to get the application ID using the name of the application
                 //p.Add("@ApplicationID", model.Application);
                 int versionId = connection.QueryFirst<int>("dbo.spVersion_Insert", p, commandType: CommandType.StoredProcedure);
-                model.VersionId = versionId;
+                model.id = versionId;
                 return model;
             }
         }
@@ -57,7 +57,7 @@ namespace BugTrackerLibrary.DataAccess
                 var p = new DynamicParameters();
                 p.Add("@EnvironmentName", model.EnvironmentName);
                 int environmentId = connection.QueryFirst<int>("dbo.spEnvironment_Insert", p, commandType: CommandType.StoredProcedure);
-                model.EnvironmentId = environmentId;
+                model.id = environmentId;
                 return model;
             }
         }
@@ -69,35 +69,23 @@ namespace BugTrackerLibrary.DataAccess
             {
                 //TODO Create all correct inputs for this from the form or remove some
                 var p = new DynamicParameters();
-                p.Add("@BugID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+                p.Add("@BugDescription", model.BugDescription);
+                p.Add("@EnvironmentID", model.EnvironmentID);
+                p.Add("@BugPriority", model.BugPriority);
                 p.Add("@BugTitle", model.BugTitle);
-                p.Add("@IssueType", model.IssueType);
-                p.Add("@ApplicationID", model.Application);
-                p.Add("@VersionID", model.Version);
-                p.Add("@BugConfirmation", model.BugConformation);
+                p.Add("@ApplicationID", model.ApplicationID);
+                p.Add("@BugLabel", model.BugLabel);
+                p.Add("@BugConfirmation", model.BugConfirmation);
                 p.Add("@BugCategory", model.BugCategory);
                 p.Add("@BugStatus", model.BugStatus);
-                p.Add("@BugPriority", model.BugPriority);
                 p.Add("@BugResolution", model.BugResolution);
                 p.Add("@BugFixedVersion", model.BugFixedVersion);
-                p.Add("@BugDescription", model.BugDescription);
-                p.Add("@BugReproduce", model.BugReproduce);
-                p.Add("@BugObservedBehaviour", model.BugObservedBehaviour);
-                p.Add("@BugExpectedBehaviour", model.BugExpextedBehaviour);
-                p.Add("@AttatchmentID", model.BugAttatchment);
-                p.Add("@EnvironmentID", model.BugEnvironment);
-                //p.Add("@DateCreated", model.Date);
-                //p.Add("@DateModified", model.DateModified);
-
-                //Executes the stored procedure and passes in the information using p
-                connection.Execute("dbo.spBugDetails_Insert", p, commandType: CommandType.StoredProcedure);
-                //gets the id from the database
-                model.BugId = p.Get<int>("@BugID");
+                p.Add("@BugAffectedVersion", model.BugAffectedVersions);
 
 
+                int bugId = connection.QueryFirst<int>("dbo.spBugReport_Insert", p, commandType: CommandType.StoredProcedure);
+                model.id = bugId;
                 return model;
-                
-                //connection.CreateBugReport(model);
 
             }
 
@@ -110,7 +98,7 @@ namespace BugTrackerLibrary.DataAccess
             List<BugModel> output;
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<BugModel>("dbo.spBugDetails_GetAll", commandType: CommandType.StoredProcedure).ToList();
+                output = connection.Query<BugModel>("dbo.spBugReport_GetAll", commandType: CommandType.StoredProcedure).ToList();
             }
             return output;
         }
@@ -145,16 +133,15 @@ namespace BugTrackerLibrary.DataAccess
             return output;
         }
 
-        public List<VersionModel> GetVersion_Application(ApplicationModel model)
+        public List<VersionModel> GetVersion_Application(int id)
         {
             //TODO Test this
-            int findName = model.id;
             List<VersionModel> output;
             var p = new DynamicParameters();
-            p.Add("@ApplicationId", findName);
+            p.Add("@ApplicationId", id);
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<VersionModel>("dbo.spVersion_GetApplication", p, commandType: CommandType.StoredProcedure).ToList();
+                output = connection.Query<VersionModel>("dbo.spVersions_GetByApplication", p, commandType: CommandType.StoredProcedure).ToList();
             }
             return output;
         }

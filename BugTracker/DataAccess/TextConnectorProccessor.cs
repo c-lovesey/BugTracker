@@ -32,7 +32,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
             {
                 string[] cols = line.Split(',');
                 EnvironmentModel e = new EnvironmentModel();
-                e.EnvironmentId = int.Parse(cols[0]);
+                e.id = int.Parse(cols[0]);
                 e.EnvironmentName = cols[1];
                 output.Add(e);
             }
@@ -47,7 +47,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
 
             foreach (EnvironmentModel e in models)
             {
-                lines.Add($"{e.EnvironmentId},{e.EnvironmentName}");
+                lines.Add($"{e.id},{e.EnvironmentName}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
@@ -60,7 +60,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
             {
                 string[] cols = line.Split(',');
                 VersionModel v = new VersionModel();
-                v.VersionId = int.Parse(cols[0]);
+                v.id = int.Parse(cols[0]);
                 v.VersionName = cols[1];
                 v.ApplicationId = cols[2];
                 output.Add(v);
@@ -75,7 +75,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
 
             foreach (VersionModel v in models)
             {
-                lines.Add($"{v.VersionId},{v.VersionName},{v.ApplicationId}");
+                lines.Add($"{v.id},{v.VersionName},{v.ApplicationId}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
@@ -116,14 +116,14 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
             {
                 string[] cols = line.Split(',');
                 BugModel b = new BugModel();
-                b.BugId = int.Parse(cols[0]);
+                b.id = int.Parse(cols[0]);
                 //b.BugName = cols[1];
                // b.BugLetterID = cols[2];
                 b.BugDescription = cols[3];
                 //b.BugStatus = cols[4];
                 b.BugPriority = cols[5];
                 //b.BugSeverity = cols[6];
-                b.BugEnvironment = cols[7];
+                b.EnvironmentID = int.Parse(cols[7]);
                 //b.BugVersion = cols[8];
                 //b.BugApplication = cols[9];
                //b.BugDate = DateTime.Parse(cols[10]);

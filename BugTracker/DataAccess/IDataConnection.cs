@@ -18,6 +18,6 @@ namespace BugTrackerLibrary.DataAccess
         List<EnvironmentModel> GetEnvironment_All();
         List<ApplicationModel> GetApplication_All();
         List<VersionModel> GetVersion_All();
-        List<VersionModel> GetVersion_Application(ApplicationModel model);
+        List<VersionModel> GetVersion_Application(int id);
     }
 }
