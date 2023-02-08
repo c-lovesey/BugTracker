@@ -31,9 +31,9 @@ namespace BugTrackerLibrary.DataAccess
 
             if (applications.Count > 0)
             {
-                currentId = applications.OrderByDescending(x => x.ApplicationId).First().ApplicationId + 1;
+                currentId = applications.OrderByDescending(x => x.id).First().id + 1;
             }
-            model.ApplicationId = currentId;
+            model.id = currentId;
 
             applications.Add(model);
             applications.SaveToApplicationFile(ApplicationFile);
@@ -133,12 +133,17 @@ namespace BugTrackerLibrary.DataAccess
             List<VersionModel> output = new List<VersionModel>();
             foreach (VersionModel version in versions)
             {
-                if (version.Application == model.ApplicationName)
+                if (version.ApplicationId == model.ApplicationName)
                 {
                     output.Add(version);
                 }
             }
             return output;
+        }
+
+        public VersionModel CreateVersion(VersionModel model, int ApplicationId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

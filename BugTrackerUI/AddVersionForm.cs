@@ -34,13 +34,16 @@ namespace BugTrackerUI
             ApplicationCombobox.DataSource = availableApplications;
             ApplicationCombobox.DisplayMember = "ApplicationName";
         }
-        
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Save button clicked");
             if (ValidateForm())
             {
-                VersionModel model = new VersionModel(VersionTextbox.Text,ApplicationCombobox.Text);
-                GlobalConfig.Connection.CreateVersion(model);
+
+                ApplicationModel app = (ApplicationModel)ApplicationCombobox.SelectedItem;
+                VersionModel model = new VersionModel(VersionTextbox.Text, ApplicationCombobox.Text);
+                GlobalConfig.Connection.CreateVersion(model, app.id);
                 ApplicationCombobox.Text = "";
                 VersionTextbox.Text = "";
             }
@@ -66,7 +69,7 @@ namespace BugTrackerUI
             return output;
 
         }
-    
+
 
         private void NameLabel_Click(object sender, EventArgs e)
         {
@@ -75,9 +78,21 @@ namespace BugTrackerUI
 
         private void SaveButton_Click_1(object sender, EventArgs e)
         {
+            if (ValidateForm())
+            {
 
+                ApplicationModel app = (ApplicationModel)ApplicationCombobox.SelectedItem;
+                int appid = app.id;
+                VersionModel model = new VersionModel(VersionTextbox.Text, ApplicationCombobox.Text);
+                GlobalConfig.Connection.CreateVersion(model, appid);
+                ApplicationCombobox.Text = "";
+                VersionTextbox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("This form has invalid information.");
+            }
         }
-
         private void ApplicationCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
 

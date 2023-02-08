@@ -13,7 +13,7 @@ namespace BugTrackerLibrary.DataAccess
         BugModel CreateBugReport(BugModel model);
         EnvironmentModel CreateEnvironment(EnvironmentModel model);
         ApplicationModel CreateApplication(ApplicationModel model);
-        VersionModel CreateVersion(VersionModel model);
+        VersionModel CreateVersion(VersionModel model, int ApplicationId);
         List<BugModel> GetBugReport_All();
         List<EnvironmentModel> GetEnvironment_All();
         List<ApplicationModel> GetApplication_All();

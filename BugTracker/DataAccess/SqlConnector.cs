@@ -30,18 +30,19 @@ namespace BugTrackerLibrary.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@ApplicationName", model.ApplicationName);
-                p.Add("@ApplicationLetterID", model.ApplicationName);
+                p.Add("@ApplicationLetterID", model.ApplicationLetterID);
                 int applicationId = connection.QueryFirst<int>("dbo.spApplication_Insert", p, commandType: CommandType.StoredProcedure);
-                model.ApplicationId = applicationId;
+                model.id = applicationId;
                 return model;
             }
         }
-        public VersionModel CreateVersion (VersionModel model)
+        public VersionModel CreateVersion (VersionModel model, int CurrentApplication)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@VersionName", model.VersionName);
+                p.Add("@ApplicationID", CurrentApplication);
                 //TODO: Find a way to get the application ID using the name of the application
                 //p.Add("@ApplicationID", model.Application);
                 int versionId = connection.QueryFirst<int>("dbo.spVersion_Insert", p, commandType: CommandType.StoredProcedure);
@@ -72,7 +73,7 @@ namespace BugTrackerLibrary.DataAccess
                 p.Add("@BugTitle", model.BugTitle);
                 p.Add("@IssueType", model.IssueType);
                 p.Add("@ApplicationID", model.Application);
-                p.Add("@BugVersion", model.Version);
+                p.Add("@VersionID", model.Version);
                 p.Add("@BugConfirmation", model.BugConformation);
                 p.Add("@BugCategory", model.BugCategory);
                 p.Add("@BugStatus", model.BugStatus);
@@ -129,7 +130,7 @@ namespace BugTrackerLibrary.DataAccess
             List<ApplicationModel> output;
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
-                output = connection.Query<ApplicationModel>("dbo.spApplication_GetAll", commandType: CommandType.StoredProcedure).ToList();
+                output = connection.Query<ApplicationModel>("dbo.spApplication_GetAll").ToList();
             }
             return output;
         }
@@ -147,10 +148,10 @@ namespace BugTrackerLibrary.DataAccess
         public List<VersionModel> GetVersion_Application(ApplicationModel model)
         {
             //TODO Test this
-            string findName = model.ApplicationName;
+            int findName = model.id;
             List<VersionModel> output;
             var p = new DynamicParameters();
-            p.Add("@ApplicationName", findName);
+            p.Add("@ApplicationId", findName);
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
                 output = connection.Query<VersionModel>("dbo.spVersion_GetApplication", p, commandType: CommandType.StoredProcedure).ToList();

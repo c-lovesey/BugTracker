@@ -62,7 +62,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
                 VersionModel v = new VersionModel();
                 v.VersionId = int.Parse(cols[0]);
                 v.VersionName = cols[1];
-                v.Application = cols[2];
+                v.ApplicationId = cols[2];
                 output.Add(v);
             }
 
@@ -75,7 +75,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
 
             foreach (VersionModel v in models)
             {
-                lines.Add($"{v.VersionId},{v.VersionName},{v.Application}");
+                lines.Add($"{v.VersionId},{v.VersionName},{v.ApplicationId}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
@@ -88,7 +88,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
             {
                 string[] cols = line.Split(',');
                 ApplicationModel a = new ApplicationModel();
-                a.ApplicationId = int.Parse(cols[0]);
+                a.id = int.Parse(cols[0]);
                 a.ApplicationName = cols[1];
                 a.ApplicationLetterID = cols[2];
                 output.Add(a);
@@ -103,7 +103,7 @@ namespace BugTrackerLibrary.DataAccess.TextHelpers
 
             foreach (ApplicationModel a in models)
             {
-                lines.Add($"{a.ApplicationId},{a.ApplicationName},{a.ApplicationLetterID}");
+                lines.Add($"{a.id},{a.ApplicationName},{a.ApplicationLetterID}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
