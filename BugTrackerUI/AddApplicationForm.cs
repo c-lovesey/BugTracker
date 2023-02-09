@@ -3,9 +3,9 @@ using BugTrackerLibrary;
 
 namespace BugTrackerUI
 {
-    public partial class CreateApplicationForm : Form
+    public partial class AddApplicationForm : Form
     {
-        public CreateApplicationForm()
+        public AddApplicationForm()
         {
             InitializeComponent();
         }
@@ -25,6 +25,7 @@ namespace BugTrackerUI
             {
                 ApplicationModel model = new ApplicationModel(NameTextbox.Text, IDTextbox.Text);
                 GlobalConfig.Connection.CreateApplication(model);
+                AddImage(model.id);
                 NameTextbox.Text = "";
                 IDTextbox.Text = "";
             }
@@ -49,6 +50,18 @@ namespace BugTrackerUI
             }
             return output;
 
+        }
+        private void AddImage(int id)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog.FileName;
+                string fileName = Path.GetFileName(path);
+                string destinationPath = @"C:\Users\clove\source\repos\BugTracker\BugTrackerUI\Images\" + id + ".png";
+                File.Copy(path, destinationPath, true);
+            }
         }
     }
 }

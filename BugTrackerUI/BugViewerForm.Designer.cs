@@ -38,12 +38,6 @@
             this.BugTitleLabel = new System.Windows.Forms.Label();
             this.DetailsLabel = new System.Windows.Forms.Label();
             this.BugDetailsLabel = new System.Windows.Forms.Label();
-            this.BugDescriptionLabel = new System.Windows.Forms.Label();
-            this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.AttatchmentsLabel = new System.Windows.Forms.Label();
-            this.AttatchmentRichtextbox = new System.Windows.Forms.RichTextBox();
-            this.BugLinkLabel = new System.Windows.Forms.Label();
-            this.RelatedBugsLabel = new System.Windows.Forms.Label();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.ApplicationLabel = new System.Windows.Forms.Label();
             this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
@@ -62,7 +56,6 @@
             this.NavigationNewApplicationLabel = new System.Windows.Forms.Label();
             this.NavigationUpdateReportLabel = new System.Windows.Forms.Label();
             this.NavigationNewReportLabel = new System.Windows.Forms.Label();
-            this.NavigationSearchLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationLogoPicturebox)).BeginInit();
             this.NavigationGroupbox.SuspendLayout();
@@ -111,7 +104,7 @@
             // 
             this.ApplicationLogoPicturebox.Location = new System.Drawing.Point(537, 186);
             this.ApplicationLogoPicturebox.Name = "ApplicationLogoPicturebox";
-            this.ApplicationLogoPicturebox.Size = new System.Drawing.Size(139, 119);
+            this.ApplicationLogoPicturebox.Size = new System.Drawing.Size(128, 128);
             this.ApplicationLogoPicturebox.TabIndex = 15;
             this.ApplicationLogoPicturebox.TabStop = false;
             // 
@@ -150,59 +143,6 @@
             this.BugDetailsLabel.Size = new System.Drawing.Size(140, 30);
             this.BugDetailsLabel.TabIndex = 19;
             this.BugDetailsLabel.Text = "<BugDetails>";
-            // 
-            // BugDescriptionLabel
-            // 
-            this.BugDescriptionLabel.AutoSize = true;
-            this.BugDescriptionLabel.Location = new System.Drawing.Point(537, 505);
-            this.BugDescriptionLabel.Name = "BugDescriptionLabel";
-            this.BugDescriptionLabel.Size = new System.Drawing.Size(182, 30);
-            this.BugDescriptionLabel.TabIndex = 21;
-            this.BugDescriptionLabel.Text = "<BugDescription>";
-            // 
-            // DescriptionLabel
-            // 
-            this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Location = new System.Drawing.Point(537, 451);
-            this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(123, 30);
-            this.DescriptionLabel.TabIndex = 20;
-            this.DescriptionLabel.Text = "Description:";
-            // 
-            // AttatchmentsLabel
-            // 
-            this.AttatchmentsLabel.AutoSize = true;
-            this.AttatchmentsLabel.Location = new System.Drawing.Point(537, 568);
-            this.AttatchmentsLabel.Name = "AttatchmentsLabel";
-            this.AttatchmentsLabel.Size = new System.Drawing.Size(143, 30);
-            this.AttatchmentsLabel.TabIndex = 22;
-            this.AttatchmentsLabel.Text = "Attatchments:";
-            // 
-            // AttatchmentRichtextbox
-            // 
-            this.AttatchmentRichtextbox.Location = new System.Drawing.Point(537, 617);
-            this.AttatchmentRichtextbox.Name = "AttatchmentRichtextbox";
-            this.AttatchmentRichtextbox.Size = new System.Drawing.Size(961, 158);
-            this.AttatchmentRichtextbox.TabIndex = 23;
-            this.AttatchmentRichtextbox.Text = "";
-            // 
-            // BugLinkLabel
-            // 
-            this.BugLinkLabel.AutoSize = true;
-            this.BugLinkLabel.Location = new System.Drawing.Point(537, 860);
-            this.BugLinkLabel.Name = "BugLinkLabel";
-            this.BugLinkLabel.Size = new System.Drawing.Size(123, 30);
-            this.BugLinkLabel.TabIndex = 25;
-            this.BugLinkLabel.Text = "<BugLinks>";
-            // 
-            // RelatedBugsLabel
-            // 
-            this.RelatedBugsLabel.AutoSize = true;
-            this.RelatedBugsLabel.Location = new System.Drawing.Point(537, 806);
-            this.RelatedBugsLabel.Name = "RelatedBugsLabel";
-            this.RelatedBugsLabel.Size = new System.Drawing.Size(138, 30);
-            this.RelatedBugsLabel.TabIndex = 24;
-            this.RelatedBugsLabel.Text = "Related Bugs:";
             // 
             // SearchTextbox
             // 
@@ -304,7 +244,6 @@
             this.NavigationGroupbox.Controls.Add(this.NavigationNewApplicationLabel);
             this.NavigationGroupbox.Controls.Add(this.NavigationUpdateReportLabel);
             this.NavigationGroupbox.Controls.Add(this.NavigationNewReportLabel);
-            this.NavigationGroupbox.Controls.Add(this.NavigationSearchLabel);
             this.NavigationGroupbox.Location = new System.Drawing.Point(12, 12);
             this.NavigationGroupbox.Name = "NavigationGroupbox";
             this.NavigationGroupbox.Size = new System.Drawing.Size(219, 910);
@@ -315,74 +254,72 @@
             // NavigationRemoveReportLabel
             // 
             this.NavigationRemoveReportLabel.AutoSize = true;
-            this.NavigationRemoveReportLabel.Location = new System.Drawing.Point(6, 158);
+            this.NavigationRemoveReportLabel.Location = new System.Drawing.Point(6, 109);
             this.NavigationRemoveReportLabel.Name = "NavigationRemoveReportLabel";
             this.NavigationRemoveReportLabel.Size = new System.Drawing.Size(196, 30);
             this.NavigationRemoveReportLabel.TabIndex = 10;
             this.NavigationRemoveReportLabel.Text = "Remove Bug Report";
+            this.NavigationRemoveReportLabel.Click += new System.EventHandler(this.NavigationRemoveReportLabel_Click);
             // 
             // NavigationRemoveVersionLabel
             // 
             this.NavigationRemoveVersionLabel.AutoSize = true;
-            this.NavigationRemoveVersionLabel.Location = new System.Drawing.Point(6, 244);
+            this.NavigationRemoveVersionLabel.Location = new System.Drawing.Point(6, 195);
             this.NavigationRemoveVersionLabel.Name = "NavigationRemoveVersionLabel";
             this.NavigationRemoveVersionLabel.Size = new System.Drawing.Size(161, 30);
             this.NavigationRemoveVersionLabel.TabIndex = 9;
             this.NavigationRemoveVersionLabel.Text = "Remove Version";
+            this.NavigationRemoveVersionLabel.Click += new System.EventHandler(this.NavigationRemoveVersionLabel_Click);
             // 
             // NavigationRemoveApplicatonLabel
             // 
             this.NavigationRemoveApplicatonLabel.AutoSize = true;
-            this.NavigationRemoveApplicatonLabel.Location = new System.Drawing.Point(6, 288);
+            this.NavigationRemoveApplicatonLabel.Location = new System.Drawing.Point(6, 239);
             this.NavigationRemoveApplicatonLabel.Name = "NavigationRemoveApplicatonLabel";
             this.NavigationRemoveApplicatonLabel.Size = new System.Drawing.Size(198, 30);
             this.NavigationRemoveApplicatonLabel.TabIndex = 8;
             this.NavigationRemoveApplicatonLabel.Text = "Remove Application";
+            this.NavigationRemoveApplicatonLabel.Click += new System.EventHandler(this.NavigationRemoveApplicatonLabel_Click);
             // 
             // NavigationNewVersionLabel
             // 
             this.NavigationNewVersionLabel.AutoSize = true;
-            this.NavigationNewVersionLabel.Location = new System.Drawing.Point(6, 202);
+            this.NavigationNewVersionLabel.Location = new System.Drawing.Point(6, 153);
             this.NavigationNewVersionLabel.Name = "NavigationNewVersionLabel";
             this.NavigationNewVersionLabel.Size = new System.Drawing.Size(169, 30);
             this.NavigationNewVersionLabel.TabIndex = 6;
             this.NavigationNewVersionLabel.Text = "Add new Version";
+            this.NavigationNewVersionLabel.Click += new System.EventHandler(this.NavigationNewVersionLabel_Click);
             // 
             // NavigationNewApplicationLabel
             // 
             this.NavigationNewApplicationLabel.AutoSize = true;
-            this.NavigationNewApplicationLabel.Location = new System.Drawing.Point(6, 330);
+            this.NavigationNewApplicationLabel.Location = new System.Drawing.Point(6, 281);
             this.NavigationNewApplicationLabel.Name = "NavigationNewApplicationLabel";
             this.NavigationNewApplicationLabel.Size = new System.Drawing.Size(210, 30);
             this.NavigationNewApplicationLabel.TabIndex = 5;
             this.NavigationNewApplicationLabel.Text = "Add New Application";
+            this.NavigationNewApplicationLabel.Click += new System.EventHandler(this.NavigationNewApplicationLabel_Click);
             // 
             // NavigationUpdateReportLabel
             // 
             this.NavigationUpdateReportLabel.AutoSize = true;
-            this.NavigationUpdateReportLabel.Location = new System.Drawing.Point(6, 113);
+            this.NavigationUpdateReportLabel.Location = new System.Drawing.Point(6, 64);
             this.NavigationUpdateReportLabel.Name = "NavigationUpdateReportLabel";
             this.NavigationUpdateReportLabel.Size = new System.Drawing.Size(189, 30);
             this.NavigationUpdateReportLabel.TabIndex = 3;
             this.NavigationUpdateReportLabel.Text = "Update Bug Report";
+            this.NavigationUpdateReportLabel.Click += new System.EventHandler(this.NavigationUpdateReportLabel_Click);
             // 
             // NavigationNewReportLabel
             // 
             this.NavigationNewReportLabel.AutoSize = true;
-            this.NavigationNewReportLabel.Location = new System.Drawing.Point(6, 71);
+            this.NavigationNewReportLabel.Location = new System.Drawing.Point(6, 22);
             this.NavigationNewReportLabel.Name = "NavigationNewReportLabel";
             this.NavigationNewReportLabel.Size = new System.Drawing.Size(188, 30);
             this.NavigationNewReportLabel.TabIndex = 1;
             this.NavigationNewReportLabel.Text = "Create New Report";
-            // 
-            // NavigationSearchLabel
-            // 
-            this.NavigationSearchLabel.AutoSize = true;
-            this.NavigationSearchLabel.Location = new System.Drawing.Point(6, 31);
-            this.NavigationSearchLabel.Name = "NavigationSearchLabel";
-            this.NavigationSearchLabel.Size = new System.Drawing.Size(75, 30);
-            this.NavigationSearchLabel.TabIndex = 0;
-            this.NavigationSearchLabel.Text = "Search";
+            this.NavigationNewReportLabel.Click += new System.EventHandler(this.NavigationNewReportLabel_Click);
             // 
             // TitleLabel
             // 
@@ -401,12 +338,6 @@
             this.ClientSize = new System.Drawing.Size(1633, 938);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.NavigationGroupbox);
-            this.Controls.Add(this.BugLinkLabel);
-            this.Controls.Add(this.RelatedBugsLabel);
-            this.Controls.Add(this.AttatchmentRichtextbox);
-            this.Controls.Add(this.AttatchmentsLabel);
-            this.Controls.Add(this.BugDescriptionLabel);
-            this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.BugDetailsLabel);
             this.Controls.Add(this.DetailsLabel);
             this.Controls.Add(this.BugTitleLabel);
@@ -451,12 +382,6 @@
         private Label BugTitleLabel;
         private Label DetailsLabel;
         private Label BugDetailsLabel;
-        private Label BugDescriptionLabel;
-        private Label DescriptionLabel;
-        private Label AttatchmentsLabel;
-        private RichTextBox AttatchmentRichtextbox;
-        private Label BugLinkLabel;
-        private Label RelatedBugsLabel;
         private TextBox SearchTextbox;
         private Label ApplicationLabel;
         private ComboBox ApplicationCombobox;
@@ -469,7 +394,6 @@
         private ComboBox ResolutionCombobox;
         private GroupBox NavigationGroupbox;
         private Label NavigationNewReportLabel;
-        private Label NavigationSearchLabel;
         private Label NavigationRemoveReportLabel;
         private Label NavigationRemoveVersionLabel;
         private Label NavigationRemoveApplicatonLabel;

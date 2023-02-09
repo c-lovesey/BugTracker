@@ -20,6 +20,6 @@ namespace BugTrackerLibrary.DataAccess
         List<ApplicationModel> GetApplication_All();
         List<VersionModel> GetVersion_All();
         List<VersionModel> GetVersion_Application(int id);
-        List<BugModel> SearchBugReport(int ApplicationID, string category, string status, string resolution, string title);
+        List<BugModel> SearchBugReport(int? ApplicationID, string category, string status, string resolution, string title);
     }
 }

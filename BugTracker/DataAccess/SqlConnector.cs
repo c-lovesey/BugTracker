@@ -152,7 +152,7 @@ namespace BugTrackerLibrary.DataAccess
             throw new NotImplementedException();
         }
 
-        public List<BugModel> SearchBugReport(int ApplicationID, string category, string status, string resolution, string title)
+        public List<BugModel> SearchBugReport(int? ApplicationID, string category, string status, string resolution, string title)
         {
             List<BugModel> output;
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))

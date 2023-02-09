@@ -1,6 +1,6 @@
 ﻿namespace BugTrackerUI
 {
-    partial class CreateApplicationForm
+    partial class AddApplicationForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateApplicationForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddApplicationForm));
             this.FormHeader = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.IDLabel = new System.Windows.Forms.Label();
