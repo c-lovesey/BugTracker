@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BugTrackerLibrary.DataAccess
 {
@@ -153,7 +154,21 @@ namespace BugTrackerLibrary.DataAccess
 
         public List<BugModel> SearchBugReport(int ApplicationID, string category, string status, string resolution, string title)
         {
-            throw new NotImplementedException();
+            List<BugModel> output;
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@ApplicationID", ApplicationID);
+                p.Add("@BugStatus", status);
+                p.Add("@BugResolution", resolution);
+                p.Add("@BugCategory", category);
+                p.Add("@BugTitle", title);
+
+                output = connection.Query<BugModel>("dbo.spBugReport_Search", p, commandType: CommandType.StoredProcedure).ToList();
+                
+            }
+            return output;
+
         }
     }
 }

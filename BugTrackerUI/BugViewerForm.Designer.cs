@@ -87,6 +87,7 @@
             this.BugListbox.Name = "BugListbox";
             this.BugListbox.Size = new System.Drawing.Size(263, 694);
             this.BugListbox.TabIndex = 10;
+            this.BugListbox.SelectedIndexChanged += new System.EventHandler(this.BugListbox_SelectedIndexChanged);
             // 
             // OrderByLabel
             // 

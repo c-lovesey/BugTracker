@@ -22,18 +22,9 @@ namespace BugTrackerUI
             //initialize database connections
             BugTrackerLibrary.GlobalConfig.InitializeConnections(BugTrackerLibrary.DatabaseType.Sql);
 
-            Application.Run(new BugReportForm());
+            Application.Run(new BugViewerForm());
             //Application.Run(new BugViewerForm());
 
-            //using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
-            //{
-            //    var p = new DynamicParameters();
-            //    p.Add("@SearchString", searchString);
-
-            //    List<BugModel> bugReports = connection.Query<BugModel>("spBugReports_Search", p, commandType: CommandType.StoredProcedure).ToList();
-
-            //    return bugReports;
-            //}
         }
     }
 }

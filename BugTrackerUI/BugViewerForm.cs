@@ -21,6 +21,7 @@ namespace BugTrackerUI
         private List<string> categoryOptions = new List<string>() { "Functional", "Syntax", "Logic", "Calculation", "Integration", "Undefined" };
         private string bugTitle;
         private List<string> statusOptions = new List<string>() { "Open", "Closed" };
+        private List<BugModel> bugs = new List<BugModel>();
         public BugViewerForm()
         {
             InitializeComponent();
@@ -55,7 +56,18 @@ namespace BugTrackerUI
         {
             if (ValidateSearchForm())
             {
-
+                ApplicationModel app = (ApplicationModel)ApplicationCombobox.SelectedItem;
+                int applicationId = app.id;
+                string category = CategoryCombobox.Text;
+                string status = StatusCombobox.Text;
+                string resolution = ResolutionCombobox.Text;
+                string title = SearchTextbox.Text;
+                bugs = GlobalConfig.Connection.SearchBugReport(applicationId, category, status, resolution, title);
+                //TODO Check why i get bug id as 0
+                BugListbox.DataSource = null;
+                BugListbox.DataSource = bugs;
+                BugListbox.DisplayMember = "BugTitle";
+                BugListbox.Refresh();
             }
         }
         private bool ValidateSearchForm()
@@ -83,8 +95,14 @@ namespace BugTrackerUI
             }
             return output;
         }
+
+        private void BugListbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BugModel selectedBug = (BugModel)BugListbox.SelectedItem;
+            ApplicationVersionLabel.Text = selectedBug.BugAffectedVersions;
+            BugTitleLabel.Text = selectedBug.BugTitle;
+            BugDetailsLabel.Text = selectedBug.BugDescription;
             
-            
-        
+        }
     }
 }
