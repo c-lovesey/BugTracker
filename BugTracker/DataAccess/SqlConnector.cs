@@ -150,5 +150,10 @@ namespace BugTrackerLibrary.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public List<BugModel> SearchBugReport(int ApplicationID, string category, string status, string resolution, string title)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
