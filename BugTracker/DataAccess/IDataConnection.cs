@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BugTrackerLibrary.Models;
 using BugTrackerLibrary.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BugTrackerLibrary.DataAccess
 {
@@ -19,5 +20,6 @@ namespace BugTrackerLibrary.DataAccess
         List<ApplicationModel> GetApplication_All();
         List<VersionModel> GetVersion_All();
         List<VersionModel> GetVersion_Application(int id);
+        List<BugModel> SearchBugReport(int ApplicationID, string category, string status, string resolution, string title);
     }
 }

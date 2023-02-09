@@ -48,21 +48,22 @@
             this.ApplicationLabel = new System.Windows.Forms.Label();
             this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
             this.TypeLabel = new System.Windows.Forms.Label();
-            this.TypeCombobox = new System.Windows.Forms.ComboBox();
+            this.CategoryCombobox = new System.Windows.Forms.ComboBox();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.StatusCombobox = new System.Windows.Forms.ComboBox();
             this.SearchButtom = new System.Windows.Forms.Button();
             this.ResolutionLabel = new System.Windows.Forms.Label();
             this.ResolutionCombobox = new System.Windows.Forms.ComboBox();
             this.NavigationGroupbox = new System.Windows.Forms.GroupBox();
-            this.NavigationSearchLabel = new System.Windows.Forms.Label();
-            this.NavigationNewReportLabel = new System.Windows.Forms.Label();
-            this.NavigationUpdateReportLabel = new System.Windows.Forms.Label();
-            this.NavigationNewVersionLabel = new System.Windows.Forms.Label();
-            this.NavigationNewApplicationLabel = new System.Windows.Forms.Label();
             this.NavigationRemoveReportLabel = new System.Windows.Forms.Label();
             this.NavigationRemoveVersionLabel = new System.Windows.Forms.Label();
             this.NavigationRemoveApplicatonLabel = new System.Windows.Forms.Label();
+            this.NavigationNewVersionLabel = new System.Windows.Forms.Label();
+            this.NavigationNewApplicationLabel = new System.Windows.Forms.Label();
+            this.NavigationUpdateReportLabel = new System.Windows.Forms.Label();
+            this.NavigationNewReportLabel = new System.Windows.Forms.Label();
+            this.NavigationSearchLabel = new System.Windows.Forms.Label();
+            this.TitleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationLogoPicturebox)).BeginInit();
             this.NavigationGroupbox.SuspendLayout();
             this.SuspendLayout();
@@ -205,7 +206,7 @@
             // SearchTextbox
             // 
             this.SearchTextbox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.SearchTextbox.Location = new System.Drawing.Point(908, 61);
+            this.SearchTextbox.Location = new System.Drawing.Point(995, 61);
             this.SearchTextbox.Name = "SearchTextbox";
             this.SearchTextbox.Size = new System.Drawing.Size(150, 35);
             this.SearchTextbox.TabIndex = 1;
@@ -237,13 +238,13 @@
             this.TypeLabel.TabIndex = 4;
             this.TypeLabel.Text = "Type:";
             // 
-            // TypeCombobox
+            // CategoryCombobox
             // 
-            this.TypeCombobox.FormattingEnabled = true;
-            this.TypeCombobox.Location = new System.Drawing.Point(565, 61);
-            this.TypeCombobox.Name = "TypeCombobox";
-            this.TypeCombobox.Size = new System.Drawing.Size(121, 38);
-            this.TypeCombobox.TabIndex = 5;
+            this.CategoryCombobox.FormattingEnabled = true;
+            this.CategoryCombobox.Location = new System.Drawing.Point(565, 61);
+            this.CategoryCombobox.Name = "CategoryCombobox";
+            this.CategoryCombobox.Size = new System.Drawing.Size(121, 38);
+            this.CategoryCombobox.TabIndex = 5;
             // 
             // StatusLabel
             // 
@@ -268,12 +269,13 @@
             this.SearchButtom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchButtom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButtom.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.SearchButtom.Location = new System.Drawing.Point(1088, 61);
+            this.SearchButtom.Location = new System.Drawing.Point(1179, 60);
             this.SearchButtom.Name = "SearchButtom";
             this.SearchButtom.Size = new System.Drawing.Size(97, 38);
             this.SearchButtom.TabIndex = 9;
             this.SearchButtom.Text = "Search";
             this.SearchButtom.UseVisualStyleBackColor = false;
+            this.SearchButtom.Click += new System.EventHandler(this.SearchButtom_Click);
             // 
             // ResolutionLabel
             // 
@@ -309,51 +311,6 @@
             this.NavigationGroupbox.TabStop = false;
             this.NavigationGroupbox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // NavigationSearchLabel
-            // 
-            this.NavigationSearchLabel.AutoSize = true;
-            this.NavigationSearchLabel.Location = new System.Drawing.Point(6, 31);
-            this.NavigationSearchLabel.Name = "NavigationSearchLabel";
-            this.NavigationSearchLabel.Size = new System.Drawing.Size(75, 30);
-            this.NavigationSearchLabel.TabIndex = 0;
-            this.NavigationSearchLabel.Text = "Search";
-            // 
-            // NavigationNewReportLabel
-            // 
-            this.NavigationNewReportLabel.AutoSize = true;
-            this.NavigationNewReportLabel.Location = new System.Drawing.Point(6, 71);
-            this.NavigationNewReportLabel.Name = "NavigationNewReportLabel";
-            this.NavigationNewReportLabel.Size = new System.Drawing.Size(188, 30);
-            this.NavigationNewReportLabel.TabIndex = 1;
-            this.NavigationNewReportLabel.Text = "Create New Report";
-            // 
-            // NavigationUpdateReportLabel
-            // 
-            this.NavigationUpdateReportLabel.AutoSize = true;
-            this.NavigationUpdateReportLabel.Location = new System.Drawing.Point(6, 113);
-            this.NavigationUpdateReportLabel.Name = "NavigationUpdateReportLabel";
-            this.NavigationUpdateReportLabel.Size = new System.Drawing.Size(189, 30);
-            this.NavigationUpdateReportLabel.TabIndex = 3;
-            this.NavigationUpdateReportLabel.Text = "Update Bug Report";
-            // 
-            // NavigationNewVersionLabel
-            // 
-            this.NavigationNewVersionLabel.AutoSize = true;
-            this.NavigationNewVersionLabel.Location = new System.Drawing.Point(6, 202);
-            this.NavigationNewVersionLabel.Name = "NavigationNewVersionLabel";
-            this.NavigationNewVersionLabel.Size = new System.Drawing.Size(169, 30);
-            this.NavigationNewVersionLabel.TabIndex = 6;
-            this.NavigationNewVersionLabel.Text = "Add new Version";
-            // 
-            // NavigationNewApplicationLabel
-            // 
-            this.NavigationNewApplicationLabel.AutoSize = true;
-            this.NavigationNewApplicationLabel.Location = new System.Drawing.Point(6, 330);
-            this.NavigationNewApplicationLabel.Name = "NavigationNewApplicationLabel";
-            this.NavigationNewApplicationLabel.Size = new System.Drawing.Size(210, 30);
-            this.NavigationNewApplicationLabel.TabIndex = 5;
-            this.NavigationNewApplicationLabel.Text = "Add New Application";
-            // 
             // NavigationRemoveReportLabel
             // 
             this.NavigationRemoveReportLabel.AutoSize = true;
@@ -381,12 +338,67 @@
             this.NavigationRemoveApplicatonLabel.TabIndex = 8;
             this.NavigationRemoveApplicatonLabel.Text = "Remove Application";
             // 
+            // NavigationNewVersionLabel
+            // 
+            this.NavigationNewVersionLabel.AutoSize = true;
+            this.NavigationNewVersionLabel.Location = new System.Drawing.Point(6, 202);
+            this.NavigationNewVersionLabel.Name = "NavigationNewVersionLabel";
+            this.NavigationNewVersionLabel.Size = new System.Drawing.Size(169, 30);
+            this.NavigationNewVersionLabel.TabIndex = 6;
+            this.NavigationNewVersionLabel.Text = "Add new Version";
+            // 
+            // NavigationNewApplicationLabel
+            // 
+            this.NavigationNewApplicationLabel.AutoSize = true;
+            this.NavigationNewApplicationLabel.Location = new System.Drawing.Point(6, 330);
+            this.NavigationNewApplicationLabel.Name = "NavigationNewApplicationLabel";
+            this.NavigationNewApplicationLabel.Size = new System.Drawing.Size(210, 30);
+            this.NavigationNewApplicationLabel.TabIndex = 5;
+            this.NavigationNewApplicationLabel.Text = "Add New Application";
+            // 
+            // NavigationUpdateReportLabel
+            // 
+            this.NavigationUpdateReportLabel.AutoSize = true;
+            this.NavigationUpdateReportLabel.Location = new System.Drawing.Point(6, 113);
+            this.NavigationUpdateReportLabel.Name = "NavigationUpdateReportLabel";
+            this.NavigationUpdateReportLabel.Size = new System.Drawing.Size(189, 30);
+            this.NavigationUpdateReportLabel.TabIndex = 3;
+            this.NavigationUpdateReportLabel.Text = "Update Bug Report";
+            // 
+            // NavigationNewReportLabel
+            // 
+            this.NavigationNewReportLabel.AutoSize = true;
+            this.NavigationNewReportLabel.Location = new System.Drawing.Point(6, 71);
+            this.NavigationNewReportLabel.Name = "NavigationNewReportLabel";
+            this.NavigationNewReportLabel.Size = new System.Drawing.Size(188, 30);
+            this.NavigationNewReportLabel.TabIndex = 1;
+            this.NavigationNewReportLabel.Text = "Create New Report";
+            // 
+            // NavigationSearchLabel
+            // 
+            this.NavigationSearchLabel.AutoSize = true;
+            this.NavigationSearchLabel.Location = new System.Drawing.Point(6, 31);
+            this.NavigationSearchLabel.Name = "NavigationSearchLabel";
+            this.NavigationSearchLabel.Size = new System.Drawing.Size(75, 30);
+            this.NavigationSearchLabel.TabIndex = 0;
+            this.NavigationSearchLabel.Text = "Search";
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Location = new System.Drawing.Point(919, 66);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(57, 30);
+            this.TitleLabel.TabIndex = 27;
+            this.TitleLabel.Text = "Title:";
+            // 
             // BugViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1633, 938);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.NavigationGroupbox);
             this.Controls.Add(this.BugLinkLabel);
             this.Controls.Add(this.RelatedBugsLabel);
@@ -407,7 +419,7 @@
             this.Controls.Add(this.SearchButtom);
             this.Controls.Add(this.StatusCombobox);
             this.Controls.Add(this.StatusLabel);
-            this.Controls.Add(this.TypeCombobox);
+            this.Controls.Add(this.CategoryCombobox);
             this.Controls.Add(this.TypeLabel);
             this.Controls.Add(this.ApplicationCombobox);
             this.Controls.Add(this.ApplicationLabel);
@@ -448,7 +460,7 @@
         private Label ApplicationLabel;
         private ComboBox ApplicationCombobox;
         private Label TypeLabel;
-        private ComboBox TypeCombobox;
+        private ComboBox CategoryCombobox;
         private Label StatusLabel;
         private ComboBox StatusCombobox;
         private Button SearchButtom;
@@ -463,5 +475,6 @@
         private Label NavigationNewVersionLabel;
         private Label NavigationNewApplicationLabel;
         private Label NavigationUpdateReportLabel;
+        private Label TitleLabel;
     }
 }
