@@ -17,12 +17,31 @@ namespace BugTrackerUI
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ApplicationDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ApplicationDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = ApplicationDataGridView.SelectedRows[0];
+                int id = (int)selectedRow.Cells["ID"].Value;
+            }
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (ApplicationDataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = ApplicationDataGridView.SelectedRows[0];
+                int id = (int)selectedRow.Cells["ID"].Value;
+                //otherstuff
+            }
+        }
+
+                private void RemoveApplicationForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void RemoveApplicationForm_Load(object sender, EventArgs e)
+        private void ApplicationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

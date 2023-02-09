@@ -63,7 +63,7 @@
             this.ApplicationDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ApplicationDataGridView.Size = new System.Drawing.Size(1057, 666);
             this.ApplicationDataGridView.TabIndex = 1;
-            this.ApplicationDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ApplicationDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplicationDataGridView_CellContentClick);
             // 
             // ApplicationName
             // 
@@ -104,6 +104,7 @@
             this.RemoveButton.TabIndex = 73;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = false;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // RemoveApplicationForm
             // 
