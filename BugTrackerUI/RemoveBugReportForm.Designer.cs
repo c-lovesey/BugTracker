@@ -32,10 +32,6 @@
             this.RemoveButton = new System.Windows.Forms.Button();
             this.BugReportDataGridView = new System.Windows.Forms.DataGridView();
             this.HeaderLabel = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Resolution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BugReportDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,16 +48,12 @@
             this.RemoveButton.TabIndex = 76;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = false;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // BugReportDataGridView
             // 
             this.BugReportDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.BugReportDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BugReportDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Name,
-            this.Status,
-            this.Resolution});
             this.BugReportDataGridView.Location = new System.Drawing.Point(26, 103);
             this.BugReportDataGridView.Name = "BugReportDataGridView";
             this.BugReportDataGridView.RowTemplate.Height = 25;
@@ -80,31 +72,7 @@
             this.HeaderLabel.TabIndex = 74;
             this.HeaderLabel.Text = "Remove Bug Report";
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 59;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.Width = 94;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.Width = 94;
-            // 
-            // Resolution
-            // 
-            this.Resolution.HeaderText = "Resolution";
-            this.Resolution.Name = "Resolution";
-            this.Resolution.Width = 135;
-            // 
-            // RemoveBugReport
+            // RemoveBugReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,6 +85,7 @@
             this.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Name = "RemoveBugReportForm";
             this.Text = "Remove Bug Report";
             ((System.ComponentModel.ISupportInitialize)(this.BugReportDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -129,9 +98,5 @@
         private Button RemoveButton;
         private DataGridView BugReportDataGridView;
         private Label HeaderLabel;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn Resolution;
     }
 }

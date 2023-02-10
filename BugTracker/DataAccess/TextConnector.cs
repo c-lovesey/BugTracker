@@ -160,5 +160,15 @@ namespace BugTrackerLibrary.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public void Delete_Application(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete_BugReport(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

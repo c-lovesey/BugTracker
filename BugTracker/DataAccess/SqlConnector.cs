@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Dapper;
 using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
 
 namespace BugTrackerLibrary.DataAccess
 {
@@ -169,6 +170,26 @@ namespace BugTrackerLibrary.DataAccess
             }
             return output;
 
+        }
+
+        public void Delete_Application(int id)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@Id", id);
+                connection.Execute("spApplication_Delete", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void Delete_BugReport(int id)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@Id", id);
+                connection.Execute("spBugReport_Delete", parameters, commandType: CommandType.StoredProcedure);
+            }
         }
     }
 }

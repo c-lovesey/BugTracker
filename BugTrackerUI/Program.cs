@@ -22,7 +22,7 @@ namespace BugTrackerUI
             //initialize database connections
             BugTrackerLibrary.GlobalConfig.InitializeConnections(BugTrackerLibrary.DatabaseType.Sql);
 
-            Application.Run(new BugViewerForm());
+            Application.Run(new RemoveBugReportForm());
             //Application.Run(new BugViewerForm());
 
         }

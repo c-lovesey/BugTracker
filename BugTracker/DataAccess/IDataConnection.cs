@@ -21,5 +21,7 @@ namespace BugTrackerLibrary.DataAccess
         List<VersionModel> GetVersion_All();
         List<VersionModel> GetVersion_Application(int id);
         List<BugModel> SearchBugReport(int? ApplicationID, string category, string status, string resolution, string title);
+        void Delete_Application(int id);
+        void Delete_BugReport(int id);
     }
 }

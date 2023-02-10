@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoveApplicationForm));
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.ApplicationDataGridView = new System.Windows.Forms.DataGridView();
-            this.ApplicationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApplicationVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApplicationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RemoveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +49,6 @@
             // 
             this.ApplicationDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.ApplicationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ApplicationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ApplicationName,
-            this.ApplicationVersion,
-            this.ApplicationID});
             this.ApplicationDataGridView.Location = new System.Drawing.Point(26, 103);
             this.ApplicationDataGridView.Name = "ApplicationDataGridView";
             this.ApplicationDataGridView.RowTemplate.Height = 25;
@@ -64,32 +56,6 @@
             this.ApplicationDataGridView.Size = new System.Drawing.Size(1057, 666);
             this.ApplicationDataGridView.TabIndex = 1;
             this.ApplicationDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplicationDataGridView_CellContentClick);
-            // 
-            // ApplicationName
-            // 
-            this.ApplicationName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ApplicationName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ApplicationName.FillWeight = 200F;
-            this.ApplicationName.HeaderText = "Name";
-            this.ApplicationName.Name = "ApplicationName";
-            this.ApplicationName.Width = 94;
-            // 
-            // ApplicationVersion
-            // 
-            this.ApplicationVersion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ApplicationVersion.FillWeight = 200F;
-            this.ApplicationVersion.HeaderText = "Version";
-            this.ApplicationVersion.Name = "ApplicationVersion";
-            this.ApplicationVersion.Width = 106;
-            // 
-            // ApplicationID
-            // 
-            this.ApplicationID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ApplicationID.FillWeight = 200F;
-            this.ApplicationID.HeaderText = "ID";
-            this.ApplicationID.Name = "ApplicationID";
-            this.ApplicationID.Width = 59;
             // 
             // RemoveButton
             // 
@@ -132,9 +98,6 @@
 
         private Label HeaderLabel;
         private DataGridView ApplicationDataGridView;
-        private DataGridViewTextBoxColumn ApplicationName;
-        private DataGridViewTextBoxColumn ApplicationVersion;
-        private DataGridViewTextBoxColumn ApplicationID;
         private Button RemoveButton;
     }
 }
