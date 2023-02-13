@@ -228,5 +228,11 @@ namespace BugTrackerUI
             }
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Form form = new AddEnvironmentForm();
+            form.Show();
+        }
     }
 }

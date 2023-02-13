@@ -48,8 +48,8 @@
             this.ResolutionLabel = new System.Windows.Forms.Label();
             this.ResolutionCombobox = new System.Windows.Forms.ComboBox();
             this.NavigationGroupbox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.NavigationRemoveReportLabel = new System.Windows.Forms.Label();
-            this.NavigationRemoveVersionLabel = new System.Windows.Forms.Label();
             this.NavigationRemoveApplicatonLabel = new System.Windows.Forms.Label();
             this.NavigationNewVersionLabel = new System.Windows.Forms.Label();
             this.NavigationNewApplicationLabel = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             // 
             this.BugListbox.FormattingEnabled = true;
             this.BugListbox.ItemHeight = 30;
-            this.BugListbox.Location = new System.Drawing.Point(237, 228);
+            this.BugListbox.Location = new System.Drawing.Point(247, 228);
             this.BugListbox.Name = "BugListbox";
             this.BugListbox.Size = new System.Drawing.Size(263, 694);
             this.BugListbox.TabIndex = 10;
@@ -144,7 +144,7 @@
             // DetailsLabel
             // 
             this.DetailsLabel.AutoSize = true;
-            this.DetailsLabel.Location = new System.Drawing.Point(537, 342);
+            this.DetailsLabel.Location = new System.Drawing.Point(634, 341);
             this.DetailsLabel.Name = "DetailsLabel";
             this.DetailsLabel.Size = new System.Drawing.Size(81, 30);
             this.DetailsLabel.TabIndex = 18;
@@ -243,8 +243,8 @@
             // 
             // NavigationGroupbox
             // 
+            this.NavigationGroupbox.Controls.Add(this.label3);
             this.NavigationGroupbox.Controls.Add(this.NavigationRemoveReportLabel);
-            this.NavigationGroupbox.Controls.Add(this.NavigationRemoveVersionLabel);
             this.NavigationGroupbox.Controls.Add(this.NavigationRemoveApplicatonLabel);
             this.NavigationGroupbox.Controls.Add(this.NavigationNewVersionLabel);
             this.NavigationGroupbox.Controls.Add(this.NavigationNewApplicationLabel);
@@ -252,10 +252,20 @@
             this.NavigationGroupbox.Controls.Add(this.NavigationNewReportLabel);
             this.NavigationGroupbox.Location = new System.Drawing.Point(12, 12);
             this.NavigationGroupbox.Name = "NavigationGroupbox";
-            this.NavigationGroupbox.Size = new System.Drawing.Size(219, 910);
+            this.NavigationGroupbox.Size = new System.Drawing.Size(229, 910);
             this.NavigationGroupbox.TabIndex = 26;
             this.NavigationGroupbox.TabStop = false;
             this.NavigationGroupbox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(222, 30);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Add New Environment";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // NavigationRemoveReportLabel
             // 
@@ -267,20 +277,10 @@
             this.NavigationRemoveReportLabel.Text = "Remove Bug Report";
             this.NavigationRemoveReportLabel.Click += new System.EventHandler(this.NavigationRemoveReportLabel_Click);
             // 
-            // NavigationRemoveVersionLabel
-            // 
-            this.NavigationRemoveVersionLabel.AutoSize = true;
-            this.NavigationRemoveVersionLabel.Location = new System.Drawing.Point(6, 195);
-            this.NavigationRemoveVersionLabel.Name = "NavigationRemoveVersionLabel";
-            this.NavigationRemoveVersionLabel.Size = new System.Drawing.Size(161, 30);
-            this.NavigationRemoveVersionLabel.TabIndex = 9;
-            this.NavigationRemoveVersionLabel.Text = "Remove Version";
-            this.NavigationRemoveVersionLabel.Click += new System.EventHandler(this.NavigationRemoveVersionLabel_Click);
-            // 
             // NavigationRemoveApplicatonLabel
             // 
             this.NavigationRemoveApplicatonLabel.AutoSize = true;
-            this.NavigationRemoveApplicatonLabel.Location = new System.Drawing.Point(6, 239);
+            this.NavigationRemoveApplicatonLabel.Location = new System.Drawing.Point(6, 240);
             this.NavigationRemoveApplicatonLabel.Name = "NavigationRemoveApplicatonLabel";
             this.NavigationRemoveApplicatonLabel.Size = new System.Drawing.Size(198, 30);
             this.NavigationRemoveApplicatonLabel.TabIndex = 8;
@@ -292,15 +292,15 @@
             this.NavigationNewVersionLabel.AutoSize = true;
             this.NavigationNewVersionLabel.Location = new System.Drawing.Point(6, 153);
             this.NavigationNewVersionLabel.Name = "NavigationNewVersionLabel";
-            this.NavigationNewVersionLabel.Size = new System.Drawing.Size(169, 30);
+            this.NavigationNewVersionLabel.Size = new System.Drawing.Size(173, 30);
             this.NavigationNewVersionLabel.TabIndex = 6;
-            this.NavigationNewVersionLabel.Text = "Add new Version";
+            this.NavigationNewVersionLabel.Text = "Add New Version";
             this.NavigationNewVersionLabel.Click += new System.EventHandler(this.NavigationNewVersionLabel_Click);
             // 
             // NavigationNewApplicationLabel
             // 
             this.NavigationNewApplicationLabel.AutoSize = true;
-            this.NavigationNewApplicationLabel.Location = new System.Drawing.Point(6, 281);
+            this.NavigationNewApplicationLabel.Location = new System.Drawing.Point(9, 196);
             this.NavigationNewApplicationLabel.Name = "NavigationNewApplicationLabel";
             this.NavigationNewApplicationLabel.Size = new System.Drawing.Size(210, 30);
             this.NavigationNewApplicationLabel.TabIndex = 5;
@@ -341,7 +341,7 @@
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CategoryLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.CategoryLabel.Location = new System.Drawing.Point(594, 450);
+            this.CategoryLabel.Location = new System.Drawing.Point(614, 450);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(101, 30);
             this.CategoryLabel.TabIndex = 93;
@@ -352,7 +352,7 @@
             this.ConfirmationStatusLabel.AutoSize = true;
             this.ConfirmationStatusLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ConfirmationStatusLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ConfirmationStatusLabel.Location = new System.Drawing.Point(504, 401);
+            this.ConfirmationStatusLabel.Location = new System.Drawing.Point(524, 401);
             this.ConfirmationStatusLabel.Name = "ConfirmationStatusLabel";
             this.ConfirmationStatusLabel.Size = new System.Drawing.Size(201, 30);
             this.ConfirmationStatusLabel.TabIndex = 91;
@@ -395,7 +395,7 @@
             // 
             this.PriorityLable.AutoSize = true;
             this.PriorityLable.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.PriorityLable.Location = new System.Drawing.Point(603, 551);
+            this.PriorityLable.Location = new System.Drawing.Point(623, 551);
             this.PriorityLable.Name = "PriorityLable";
             this.PriorityLable.Size = new System.Drawing.Size(83, 30);
             this.PriorityLable.TabIndex = 81;
@@ -405,7 +405,7 @@
             // 
             this.EnvironmentLabel.AutoSize = true;
             this.EnvironmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.EnvironmentLabel.Location = new System.Drawing.Point(551, 500);
+            this.EnvironmentLabel.Location = new System.Drawing.Point(571, 500);
             this.EnvironmentLabel.Name = "EnvironmentLabel";
             this.EnvironmentLabel.Size = new System.Drawing.Size(135, 30);
             this.EnvironmentLabel.TabIndex = 79;
@@ -414,65 +414,65 @@
             // ConfirmationDetailsLabel
             // 
             this.ConfirmationDetailsLabel.AutoSize = true;
-            this.ConfirmationDetailsLabel.Location = new System.Drawing.Point(711, 401);
+            this.ConfirmationDetailsLabel.Location = new System.Drawing.Point(731, 401);
             this.ConfirmationDetailsLabel.Name = "ConfirmationDetailsLabel";
-            this.ConfirmationDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.ConfirmationDetailsLabel.Size = new System.Drawing.Size(224, 30);
             this.ConfirmationDetailsLabel.TabIndex = 94;
-            this.ConfirmationDetailsLabel.Text = "label3";
+            this.ConfirmationDetailsLabel.Text = "<Confirmation Status>";
             // 
             // CategoryDetailsLabel
             // 
             this.CategoryDetailsLabel.AutoSize = true;
-            this.CategoryDetailsLabel.Location = new System.Drawing.Point(711, 450);
+            this.CategoryDetailsLabel.Location = new System.Drawing.Point(731, 450);
             this.CategoryDetailsLabel.Name = "CategoryDetailsLabel";
-            this.CategoryDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.CategoryDetailsLabel.Size = new System.Drawing.Size(124, 30);
             this.CategoryDetailsLabel.TabIndex = 95;
-            this.CategoryDetailsLabel.Text = "label4";
+            this.CategoryDetailsLabel.Text = "<Category>";
             // 
             // EnvironmentDetailsLabel
             // 
             this.EnvironmentDetailsLabel.AutoSize = true;
-            this.EnvironmentDetailsLabel.Location = new System.Drawing.Point(711, 500);
+            this.EnvironmentDetailsLabel.Location = new System.Drawing.Point(731, 500);
             this.EnvironmentDetailsLabel.Name = "EnvironmentDetailsLabel";
-            this.EnvironmentDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.EnvironmentDetailsLabel.Size = new System.Drawing.Size(158, 30);
             this.EnvironmentDetailsLabel.TabIndex = 96;
-            this.EnvironmentDetailsLabel.Text = "label5";
+            this.EnvironmentDetailsLabel.Text = "<Environment>";
             // 
             // PriorityDetailsLabel
             // 
             this.PriorityDetailsLabel.AutoSize = true;
-            this.PriorityDetailsLabel.Location = new System.Drawing.Point(711, 551);
+            this.PriorityDetailsLabel.Location = new System.Drawing.Point(731, 551);
             this.PriorityDetailsLabel.Name = "PriorityDetailsLabel";
-            this.PriorityDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.PriorityDetailsLabel.Size = new System.Drawing.Size(106, 30);
             this.PriorityDetailsLabel.TabIndex = 97;
-            this.PriorityDetailsLabel.Text = "label6";
+            this.PriorityDetailsLabel.Text = "<Priority>";
             // 
             // StatusDetailsLabel
             // 
             this.StatusDetailsLabel.AutoSize = true;
             this.StatusDetailsLabel.Location = new System.Drawing.Point(1149, 396);
             this.StatusDetailsLabel.Name = "StatusDetailsLabel";
-            this.StatusDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.StatusDetailsLabel.Size = new System.Drawing.Size(97, 30);
             this.StatusDetailsLabel.TabIndex = 98;
-            this.StatusDetailsLabel.Text = "label7";
+            this.StatusDetailsLabel.Text = "<Status>";
             // 
             // ResolutionDetailsLabel
             // 
             this.ResolutionDetailsLabel.AutoSize = true;
             this.ResolutionDetailsLabel.Location = new System.Drawing.Point(1149, 445);
             this.ResolutionDetailsLabel.Name = "ResolutionDetailsLabel";
-            this.ResolutionDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.ResolutionDetailsLabel.Size = new System.Drawing.Size(138, 30);
             this.ResolutionDetailsLabel.TabIndex = 99;
-            this.ResolutionDetailsLabel.Text = "label8";
+            this.ResolutionDetailsLabel.Text = "<Resoultion>";
             // 
             // FixedVersionDetailsLabel
             // 
             this.FixedVersionDetailsLabel.AutoSize = true;
             this.FixedVersionDetailsLabel.Location = new System.Drawing.Point(1149, 500);
             this.FixedVersionDetailsLabel.Name = "FixedVersionDetailsLabel";
-            this.FixedVersionDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.FixedVersionDetailsLabel.Size = new System.Drawing.Size(163, 30);
             this.FixedVersionDetailsLabel.TabIndex = 100;
-            this.FixedVersionDetailsLabel.Text = "label9";
+            this.FixedVersionDetailsLabel.Text = "<Fixed Version>";
             // 
             // BugDetailsLabel
             // 
@@ -560,7 +560,6 @@
         private GroupBox NavigationGroupbox;
         private Label NavigationNewReportLabel;
         private Label NavigationRemoveReportLabel;
-        private Label NavigationRemoveVersionLabel;
         private Label NavigationRemoveApplicatonLabel;
         private Label NavigationNewVersionLabel;
         private Label NavigationNewApplicationLabel;
@@ -581,5 +580,6 @@
         private Label ResolutionDetailsLabel;
         private Label FixedVersionDetailsLabel;
         private RichTextBox BugDetailsLabel;
+        private Label label3;
     }
 }

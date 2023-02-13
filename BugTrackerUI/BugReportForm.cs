@@ -103,7 +103,7 @@ namespace BugTrackerUI
 
 
                 GlobalConfig.Connection.CreateBugReport(model);
-                AddFile(model.id);
+                //AddFile(model.id);
                 ApplicationCombobox.Text = "";
                 VersionCheckedListbox.Text = "";
                 EnvironmentCombobox.Text = "";
