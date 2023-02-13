@@ -37,13 +37,9 @@
             this.DescriptionTextbox = new System.Windows.Forms.TextBox();
             this.EnvironmentLabel = new System.Windows.Forms.Label();
             this.EnvironmentCombobox = new System.Windows.Forms.ComboBox();
-            this.AttatchmentLabel = new System.Windows.Forms.Label();
-            this.UploadButton = new System.Windows.Forms.Button();
             this.PriorityLable = new System.Windows.Forms.Label();
-            this.AttatchmentRichTextbox = new System.Windows.Forms.RichTextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.PriorityCombobox = new System.Windows.Forms.ComboBox();
-            this.BackButton = new System.Windows.Forms.Button();
             this.CategoryCombobox = new System.Windows.Forms.ComboBox();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.ConfirmCombobox = new System.Windows.Forms.ComboBox();
@@ -64,7 +60,7 @@
             // ApplicationCombobox
             // 
             this.ApplicationCombobox.FormattingEnabled = true;
-            this.ApplicationCombobox.Location = new System.Drawing.Point(195, 119);
+            this.ApplicationCombobox.Location = new System.Drawing.Point(195, 113);
             this.ApplicationCombobox.Name = "ApplicationCombobox";
             this.ApplicationCombobox.Size = new System.Drawing.Size(214, 38);
             this.ApplicationCombobox.TabIndex = 29;
@@ -116,7 +112,7 @@
             this.DescriptionTextbox.Location = new System.Drawing.Point(12, 353);
             this.DescriptionTextbox.Multiline = true;
             this.DescriptionTextbox.Name = "DescriptionTextbox";
-            this.DescriptionTextbox.Size = new System.Drawing.Size(1039, 146);
+            this.DescriptionTextbox.Size = new System.Drawing.Size(1308, 496);
             this.DescriptionTextbox.TabIndex = 32;
             this.DescriptionTextbox.TextChanged += new System.EventHandler(this.DescriptionTextbox_TextChanged);
             // 
@@ -124,7 +120,7 @@
             // 
             this.EnvironmentLabel.AutoSize = true;
             this.EnvironmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.EnvironmentLabel.Location = new System.Drawing.Point(12, 512);
+            this.EnvironmentLabel.Location = new System.Drawing.Point(464, 273);
             this.EnvironmentLabel.Name = "EnvironmentLabel";
             this.EnvironmentLabel.Size = new System.Drawing.Size(135, 30);
             this.EnvironmentLabel.TabIndex = 34;
@@ -134,52 +130,21 @@
             // EnvironmentCombobox
             // 
             this.EnvironmentCombobox.FormattingEnabled = true;
-            this.EnvironmentCombobox.Location = new System.Drawing.Point(14, 554);
+            this.EnvironmentCombobox.Location = new System.Drawing.Point(616, 268);
             this.EnvironmentCombobox.Name = "EnvironmentCombobox";
-            this.EnvironmentCombobox.Size = new System.Drawing.Size(267, 38);
+            this.EnvironmentCombobox.Size = new System.Drawing.Size(233, 38);
             this.EnvironmentCombobox.TabIndex = 35;
-            // 
-            // AttatchmentLabel
-            // 
-            this.AttatchmentLabel.AutoSize = true;
-            this.AttatchmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.AttatchmentLabel.Location = new System.Drawing.Point(12, 612);
-            this.AttatchmentLabel.Name = "AttatchmentLabel";
-            this.AttatchmentLabel.Size = new System.Drawing.Size(134, 30);
-            this.AttatchmentLabel.TabIndex = 36;
-            this.AttatchmentLabel.Text = "Attatchment:";
-            // 
-            // UploadButton
-            // 
-            this.UploadButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.UploadButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UploadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UploadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UploadButton.Location = new System.Drawing.Point(908, 644);
-            this.UploadButton.Name = "UploadButton";
-            this.UploadButton.Size = new System.Drawing.Size(130, 38);
-            this.UploadButton.TabIndex = 37;
-            this.UploadButton.Text = "Upload";
-            this.UploadButton.UseVisualStyleBackColor = false;
             // 
             // PriorityLable
             // 
             this.PriorityLable.AutoSize = true;
             this.PriorityLable.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.PriorityLable.Location = new System.Drawing.Point(13, 860);
+            this.PriorityLable.Location = new System.Drawing.Point(943, 276);
             this.PriorityLable.Name = "PriorityLable";
             this.PriorityLable.Size = new System.Drawing.Size(83, 30);
             this.PriorityLable.TabIndex = 38;
             this.PriorityLable.Text = "Priority:";
             this.PriorityLable.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // AttatchmentRichTextbox
-            // 
-            this.AttatchmentRichTextbox.Location = new System.Drawing.Point(14, 645);
-            this.AttatchmentRichTextbox.Name = "AttatchmentRichTextbox";
-            this.AttatchmentRichTextbox.Size = new System.Drawing.Size(888, 212);
-            this.AttatchmentRichTextbox.TabIndex = 40;
-            this.AttatchmentRichTextbox.Text = "";
             // 
             // SaveButton
             // 
@@ -198,23 +163,10 @@
             // PriorityCombobox
             // 
             this.PriorityCombobox.FormattingEnabled = true;
-            this.PriorityCombobox.Location = new System.Drawing.Point(14, 908);
+            this.PriorityCombobox.Location = new System.Drawing.Point(1041, 273);
             this.PriorityCombobox.Name = "PriorityCombobox";
-            this.PriorityCombobox.Size = new System.Drawing.Size(214, 38);
+            this.PriorityCombobox.Size = new System.Drawing.Size(233, 38);
             this.PriorityCombobox.TabIndex = 42;
-            // 
-            // BackButton
-            // 
-            this.BackButton.BackColor = System.Drawing.Color.Crimson;
-            this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BackButton.Location = new System.Drawing.Point(960, 898);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(130, 38);
-            this.BackButton.TabIndex = 43;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = false;
             // 
             // CategoryCombobox
             // 
@@ -334,7 +286,7 @@
             // 
             this.VersionCheckedListbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.VersionCheckedListbox.FormattingEnabled = true;
-            this.VersionCheckedListbox.Location = new System.Drawing.Point(195, 164);
+            this.VersionCheckedListbox.Location = new System.Drawing.Point(195, 166);
             this.VersionCheckedListbox.Name = "VersionCheckedListbox";
             this.VersionCheckedListbox.Size = new System.Drawing.Size(214, 124);
             this.VersionCheckedListbox.TabIndex = 66;
@@ -379,13 +331,9 @@
             this.Controls.Add(this.StatusCombobox);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.VersionCheckedListbox);
-            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.PriorityCombobox);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.AttatchmentRichTextbox);
             this.Controls.Add(this.PriorityLable);
-            this.Controls.Add(this.UploadButton);
-            this.Controls.Add(this.AttatchmentLabel);
             this.Controls.Add(this.EnvironmentCombobox);
             this.Controls.Add(this.EnvironmentLabel);
             this.Controls.Add(this.DescriptionTextbox);
@@ -413,13 +361,9 @@
         private TextBox DescriptionTextbox;
         private Label EnvironmentLabel;
         private ComboBox EnvironmentCombobox;
-        private Label AttatchmentLabel;
-        private Button UploadButton;
         private Label PriorityLable;
-        private RichTextBox AttatchmentRichTextbox;
         private Button SaveButton;
         private ComboBox PriorityCombobox;
-        private Button BackButton;
         private ComboBox CategoryCombobox;
         private Label CategoryLabel;
         private ComboBox ConfirmCombobox;

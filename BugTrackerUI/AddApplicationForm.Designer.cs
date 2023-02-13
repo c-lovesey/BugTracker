@@ -35,7 +35,6 @@
             this.NameTextbox = new System.Windows.Forms.TextBox();
             this.IDTextbox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.ConfirmCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // FormHeader
@@ -98,27 +97,12 @@
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ConfirmCheckbox
-            // 
-            this.ConfirmCheckbox.AutoSize = true;
-            this.ConfirmCheckbox.BackColor = System.Drawing.Color.White;
-            this.ConfirmCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ConfirmCheckbox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ConfirmCheckbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ConfirmCheckbox.Location = new System.Drawing.Point(46, 256);
-            this.ConfirmCheckbox.Name = "ConfirmCheckbox";
-            this.ConfirmCheckbox.Size = new System.Drawing.Size(193, 34);
-            this.ConfirmCheckbox.TabIndex = 9;
-            this.ConfirmCheckbox.Text = "Confirm changes";
-            this.ConfirmCheckbox.UseVisualStyleBackColor = false;
-            // 
-            // CreateApplicationForm
+            // AddApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(405, 404);
-            this.Controls.Add(this.ConfirmCheckbox);
+            this.ClientSize = new System.Drawing.Size(405, 318);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.IDTextbox);
             this.Controls.Add(this.NameTextbox);
@@ -128,7 +112,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Name = "CreateApplicationForm";
+            this.Name = "AddApplicationForm";
             this.Text = "Create New Application";
             this.Load += new System.EventHandler(this.CreateApplicationForm_Load);
             this.ResumeLayout(false);
@@ -144,6 +128,5 @@
         private TextBox NameTextbox;
         private TextBox IDTextbox;
         private Button SaveButton;
-        private CheckBox ConfirmCheckbox;
     }
 }

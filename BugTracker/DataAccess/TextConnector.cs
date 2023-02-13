@@ -170,5 +170,30 @@ namespace BugTrackerLibrary.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        public void Delete_Environment(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete_Version(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update_BugReport(BugModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EnvironmentModel GetEnvironment_ByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update_BugReport(int id, int applicationId, string commaSeparatedVersions, int environmentId, string bugStatus, string bugResolution, string bugPriority, string bugDescription, string bugTitle, string bugLabel, string bugCategory, string bugFixedVersion, string bugConfirmation,string affectedVersions)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

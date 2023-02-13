@@ -13,7 +13,7 @@ using System.Reflection;
 
 namespace BugTrackerLibrary.DataAccess
 {
-   
+
     public class SqlConnector : IDataConnection
     {
         private const string db = "BugTracker";
@@ -38,7 +38,7 @@ namespace BugTrackerLibrary.DataAccess
                 return model;
             }
         }
-        public VersionModel CreateVersion (VersionModel model, int CurrentApplication)
+        public VersionModel CreateVersion(VersionModel model, int CurrentApplication)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -166,7 +166,7 @@ namespace BugTrackerLibrary.DataAccess
                 p.Add("@BugTitle", title);
 
                 output = connection.Query<BugModel>("dbo.spBugReport_Search", p, commandType: CommandType.StoredProcedure).ToList();
-                
+
             }
             return output;
 
@@ -191,5 +191,53 @@ namespace BugTrackerLibrary.DataAccess
                 connection.Execute("spBugReport_Delete", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+
+        public void Delete_Environment(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete_Version(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public EnvironmentModel GetEnvironment_ByID(int id)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("BugTracker")))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@EnvironmentID", id);
+
+                EnvironmentModel environment = connection.QuerySingleOrDefault<EnvironmentModel>("spEnvironment_GetByID", parameters, commandType: CommandType.StoredProcedure);
+
+                return environment;
+            }
+        }
+
+        public void Update_BugReport(int id, int applicationId, string commaSeparatedVersions, int environmentId, string bugStatus, string bugResolution, string bugPriority, string bugDescription, string bugTitle, string bugLabel, string bugCategory, string bugFixedVersion, string bugConfirmation, string affectedVersions)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", id);
+                p.Add("@BugDescription", bugDescription);
+                p.Add("@EnvironmentID", environmentId);
+                p.Add("@BugPriority", bugPriority);
+                p.Add("@BugTitle", bugTitle);
+                p.Add("@ApplicationID", applicationId);
+                p.Add("@BugLabel", bugLabel);
+                p.Add("@BugConfirmation", bugConfirmation);
+                p.Add("@BugCategory", bugCategory);
+                p.Add("@BugStatus", bugStatus);
+                p.Add("@BugResolution",bugResolution);
+                p.Add("@BugFixedVersion", bugFixedVersion);
+                p.Add("@BugAffectedVersions",affectedVersions);
+                connection.Execute("dbo.spBugReport_Update", p, commandType: CommandType.StoredProcedure);
+            }
+            return;
+        }
     }
 }
+

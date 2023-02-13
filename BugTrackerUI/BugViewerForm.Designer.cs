@@ -37,7 +37,6 @@
             this.BugIDLabel = new System.Windows.Forms.Label();
             this.BugTitleLabel = new System.Windows.Forms.Label();
             this.DetailsLabel = new System.Windows.Forms.Label();
-            this.BugDetailsLabel = new System.Windows.Forms.Label();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.ApplicationLabel = new System.Windows.Forms.Label();
             this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,21 @@
             this.NavigationUpdateReportLabel = new System.Windows.Forms.Label();
             this.NavigationNewReportLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.ConfirmationStatusLabel = new System.Windows.Forms.Label();
+            this.FixedLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PriorityLable = new System.Windows.Forms.Label();
+            this.EnvironmentLabel = new System.Windows.Forms.Label();
+            this.ConfirmationDetailsLabel = new System.Windows.Forms.Label();
+            this.CategoryDetailsLabel = new System.Windows.Forms.Label();
+            this.EnvironmentDetailsLabel = new System.Windows.Forms.Label();
+            this.PriorityDetailsLabel = new System.Windows.Forms.Label();
+            this.StatusDetailsLabel = new System.Windows.Forms.Label();
+            this.ResolutionDetailsLabel = new System.Windows.Forms.Label();
+            this.FixedVersionDetailsLabel = new System.Windows.Forms.Label();
+            this.BugDetailsLabel = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationLogoPicturebox)).BeginInit();
             this.NavigationGroupbox.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +125,7 @@
             // BugIDLabel
             // 
             this.BugIDLabel.AutoSize = true;
-            this.BugIDLabel.Location = new System.Drawing.Point(898, 186);
+            this.BugIDLabel.Location = new System.Drawing.Point(945, 186);
             this.BugIDLabel.Name = "BugIDLabel";
             this.BugIDLabel.Size = new System.Drawing.Size(98, 30);
             this.BugIDLabel.TabIndex = 16;
@@ -120,9 +134,10 @@
             // BugTitleLabel
             // 
             this.BugTitleLabel.AutoSize = true;
+            this.BugTitleLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BugTitleLabel.Location = new System.Drawing.Point(688, 228);
             this.BugTitleLabel.Name = "BugTitleLabel";
-            this.BugTitleLabel.Size = new System.Drawing.Size(122, 30);
+            this.BugTitleLabel.Size = new System.Drawing.Size(141, 32);
             this.BugTitleLabel.TabIndex = 17;
             this.BugTitleLabel.Text = "<Bug Title>";
             // 
@@ -134,15 +149,6 @@
             this.DetailsLabel.Size = new System.Drawing.Size(81, 30);
             this.DetailsLabel.TabIndex = 18;
             this.DetailsLabel.Text = "Details:";
-            // 
-            // BugDetailsLabel
-            // 
-            this.BugDetailsLabel.AutoSize = true;
-            this.BugDetailsLabel.Location = new System.Drawing.Point(537, 396);
-            this.BugDetailsLabel.Name = "BugDetailsLabel";
-            this.BugDetailsLabel.Size = new System.Drawing.Size(140, 30);
-            this.BugDetailsLabel.TabIndex = 19;
-            this.BugDetailsLabel.Text = "<BugDetails>";
             // 
             // SearchTextbox
             // 
@@ -330,15 +336,175 @@
             this.TitleLabel.TabIndex = 27;
             this.TitleLabel.Text = "Title:";
             // 
+            // CategoryLabel
+            // 
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CategoryLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.CategoryLabel.Location = new System.Drawing.Point(594, 450);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(101, 30);
+            this.CategoryLabel.TabIndex = 93;
+            this.CategoryLabel.Text = "Category:";
+            // 
+            // ConfirmationStatusLabel
+            // 
+            this.ConfirmationStatusLabel.AutoSize = true;
+            this.ConfirmationStatusLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ConfirmationStatusLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.ConfirmationStatusLabel.Location = new System.Drawing.Point(504, 401);
+            this.ConfirmationStatusLabel.Name = "ConfirmationStatusLabel";
+            this.ConfirmationStatusLabel.Size = new System.Drawing.Size(201, 30);
+            this.ConfirmationStatusLabel.TabIndex = 91;
+            this.ConfirmationStatusLabel.Text = "Confirmation Status:";
+            // 
+            // FixedLabel
+            // 
+            this.FixedLabel.AutoSize = true;
+            this.FixedLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FixedLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.FixedLabel.Location = new System.Drawing.Point(1005, 500);
+            this.FixedLabel.Name = "FixedLabel";
+            this.FixedLabel.Size = new System.Drawing.Size(140, 30);
+            this.FixedLabel.TabIndex = 87;
+            this.FixedLabel.Text = "Fixed Version:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Location = new System.Drawing.Point(1029, 445);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 30);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Resolution:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.Location = new System.Drawing.Point(1067, 396);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 30);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Status:";
+            // 
+            // PriorityLable
+            // 
+            this.PriorityLable.AutoSize = true;
+            this.PriorityLable.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.PriorityLable.Location = new System.Drawing.Point(603, 551);
+            this.PriorityLable.Name = "PriorityLable";
+            this.PriorityLable.Size = new System.Drawing.Size(83, 30);
+            this.PriorityLable.TabIndex = 81;
+            this.PriorityLable.Text = "Priority:";
+            // 
+            // EnvironmentLabel
+            // 
+            this.EnvironmentLabel.AutoSize = true;
+            this.EnvironmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.EnvironmentLabel.Location = new System.Drawing.Point(551, 500);
+            this.EnvironmentLabel.Name = "EnvironmentLabel";
+            this.EnvironmentLabel.Size = new System.Drawing.Size(135, 30);
+            this.EnvironmentLabel.TabIndex = 79;
+            this.EnvironmentLabel.Text = "Environment:";
+            // 
+            // ConfirmationDetailsLabel
+            // 
+            this.ConfirmationDetailsLabel.AutoSize = true;
+            this.ConfirmationDetailsLabel.Location = new System.Drawing.Point(711, 401);
+            this.ConfirmationDetailsLabel.Name = "ConfirmationDetailsLabel";
+            this.ConfirmationDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.ConfirmationDetailsLabel.TabIndex = 94;
+            this.ConfirmationDetailsLabel.Text = "label3";
+            // 
+            // CategoryDetailsLabel
+            // 
+            this.CategoryDetailsLabel.AutoSize = true;
+            this.CategoryDetailsLabel.Location = new System.Drawing.Point(711, 450);
+            this.CategoryDetailsLabel.Name = "CategoryDetailsLabel";
+            this.CategoryDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.CategoryDetailsLabel.TabIndex = 95;
+            this.CategoryDetailsLabel.Text = "label4";
+            // 
+            // EnvironmentDetailsLabel
+            // 
+            this.EnvironmentDetailsLabel.AutoSize = true;
+            this.EnvironmentDetailsLabel.Location = new System.Drawing.Point(711, 500);
+            this.EnvironmentDetailsLabel.Name = "EnvironmentDetailsLabel";
+            this.EnvironmentDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.EnvironmentDetailsLabel.TabIndex = 96;
+            this.EnvironmentDetailsLabel.Text = "label5";
+            // 
+            // PriorityDetailsLabel
+            // 
+            this.PriorityDetailsLabel.AutoSize = true;
+            this.PriorityDetailsLabel.Location = new System.Drawing.Point(711, 551);
+            this.PriorityDetailsLabel.Name = "PriorityDetailsLabel";
+            this.PriorityDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.PriorityDetailsLabel.TabIndex = 97;
+            this.PriorityDetailsLabel.Text = "label6";
+            // 
+            // StatusDetailsLabel
+            // 
+            this.StatusDetailsLabel.AutoSize = true;
+            this.StatusDetailsLabel.Location = new System.Drawing.Point(1149, 396);
+            this.StatusDetailsLabel.Name = "StatusDetailsLabel";
+            this.StatusDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.StatusDetailsLabel.TabIndex = 98;
+            this.StatusDetailsLabel.Text = "label7";
+            // 
+            // ResolutionDetailsLabel
+            // 
+            this.ResolutionDetailsLabel.AutoSize = true;
+            this.ResolutionDetailsLabel.Location = new System.Drawing.Point(1149, 445);
+            this.ResolutionDetailsLabel.Name = "ResolutionDetailsLabel";
+            this.ResolutionDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.ResolutionDetailsLabel.TabIndex = 99;
+            this.ResolutionDetailsLabel.Text = "label8";
+            // 
+            // FixedVersionDetailsLabel
+            // 
+            this.FixedVersionDetailsLabel.AutoSize = true;
+            this.FixedVersionDetailsLabel.Location = new System.Drawing.Point(1149, 500);
+            this.FixedVersionDetailsLabel.Name = "FixedVersionDetailsLabel";
+            this.FixedVersionDetailsLabel.Size = new System.Drawing.Size(68, 30);
+            this.FixedVersionDetailsLabel.TabIndex = 100;
+            this.FixedVersionDetailsLabel.Text = "label9";
+            // 
+            // BugDetailsLabel
+            // 
+            this.BugDetailsLabel.Location = new System.Drawing.Point(537, 607);
+            this.BugDetailsLabel.Name = "BugDetailsLabel";
+            this.BugDetailsLabel.Size = new System.Drawing.Size(877, 300);
+            this.BugDetailsLabel.TabIndex = 101;
+            this.BugDetailsLabel.Text = "";
+            // 
             // BugViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1633, 938);
+            this.ClientSize = new System.Drawing.Size(1441, 938);
+            this.Controls.Add(this.BugDetailsLabel);
+            this.Controls.Add(this.FixedVersionDetailsLabel);
+            this.Controls.Add(this.ResolutionDetailsLabel);
+            this.Controls.Add(this.StatusDetailsLabel);
+            this.Controls.Add(this.PriorityDetailsLabel);
+            this.Controls.Add(this.EnvironmentDetailsLabel);
+            this.Controls.Add(this.CategoryDetailsLabel);
+            this.Controls.Add(this.ConfirmationDetailsLabel);
+            this.Controls.Add(this.CategoryLabel);
+            this.Controls.Add(this.ConfirmationStatusLabel);
+            this.Controls.Add(this.FixedLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.PriorityLable);
+            this.Controls.Add(this.EnvironmentLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.NavigationGroupbox);
-            this.Controls.Add(this.BugDetailsLabel);
             this.Controls.Add(this.DetailsLabel);
             this.Controls.Add(this.BugTitleLabel);
             this.Controls.Add(this.BugIDLabel);
@@ -381,7 +547,6 @@
         private Label BugIDLabel;
         private Label BugTitleLabel;
         private Label DetailsLabel;
-        private Label BugDetailsLabel;
         private TextBox SearchTextbox;
         private Label ApplicationLabel;
         private ComboBox ApplicationCombobox;
@@ -401,5 +566,20 @@
         private Label NavigationNewApplicationLabel;
         private Label NavigationUpdateReportLabel;
         private Label TitleLabel;
+        private Label CategoryLabel;
+        private Label ConfirmationStatusLabel;
+        private Label FixedLabel;
+        private Label label1;
+        private Label label2;
+        private Label PriorityLable;
+        private Label EnvironmentLabel;
+        private Label ConfirmationDetailsLabel;
+        private Label CategoryDetailsLabel;
+        private Label EnvironmentDetailsLabel;
+        private Label PriorityDetailsLabel;
+        private Label StatusDetailsLabel;
+        private Label ResolutionDetailsLabel;
+        private Label FixedVersionDetailsLabel;
+        private RichTextBox BugDetailsLabel;
     }
 }

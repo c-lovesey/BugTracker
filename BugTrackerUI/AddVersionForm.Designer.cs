@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVersionForm));
-            this.ConfirmCheckbox = new System.Windows.Forms.CheckBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -37,20 +36,6 @@
             this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
             this.VersionTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // ConfirmCheckbox
-            // 
-            this.ConfirmCheckbox.AutoSize = true;
-            this.ConfirmCheckbox.BackColor = System.Drawing.Color.White;
-            this.ConfirmCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ConfirmCheckbox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ConfirmCheckbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ConfirmCheckbox.Location = new System.Drawing.Point(28, 256);
-            this.ConfirmCheckbox.Name = "ConfirmCheckbox";
-            this.ConfirmCheckbox.Size = new System.Drawing.Size(193, 34);
-            this.ConfirmCheckbox.TabIndex = 18;
-            this.ConfirmCheckbox.Text = "Confirm changes";
-            this.ConfirmCheckbox.UseVisualStyleBackColor = false;
             // 
             // SaveButton
             // 
@@ -119,10 +104,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(403, 389);
+            this.ClientSize = new System.Drawing.Size(403, 329);
             this.Controls.Add(this.VersionTextbox);
             this.Controls.Add(this.ApplicationCombobox);
-            this.Controls.Add(this.ConfirmCheckbox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.NameLabel);
@@ -138,8 +122,6 @@
         }
 
         #endregion
-
-        private CheckBox ConfirmCheckbox;
         private Button SaveButton;
         private Label VersionLabel;
         private Label NameLabel;

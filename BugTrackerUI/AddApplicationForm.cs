@@ -33,6 +33,7 @@ namespace BugTrackerUI
             {
                 MessageBox.Show("This form has invalid information.");
             }
+            
         }
         private bool ValidateForm()
         {

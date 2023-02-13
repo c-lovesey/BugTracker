@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBugReportForm));
-            this.DetailsLabel = new System.Windows.Forms.Label();
             this.FormHeader = new System.Windows.Forms.Label();
             this.AffectedLabel = new System.Windows.Forms.Label();
             this.AffectedCheckedListbox = new System.Windows.Forms.CheckedListBox();
@@ -46,27 +45,17 @@
             this.LabelsCombobox = new System.Windows.Forms.ComboBox();
             this.LabelsLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.DescriptionTextbox = new System.Windows.Forms.TextBox();
             this.PriorityCombobox = new System.Windows.Forms.ComboBox();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.AttatchmentRichTextbox = new System.Windows.Forms.RichTextBox();
             this.PriorityLabel = new System.Windows.Forms.Label();
-            this.UploadButton = new System.Windows.Forms.Button();
-            this.AttatchmentLabel = new System.Windows.Forms.Label();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.RemoveSelectedCombobox = new System.Windows.Forms.ComboBox();
+            this.TitleTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ApplicationCombobox = new System.Windows.Forms.ComboBox();
+            this.ApplicationLabel = new System.Windows.Forms.Label();
+            this.DescriptionTextbox = new System.Windows.Forms.TextBox();
+            this.EnvironmentCombobox = new System.Windows.Forms.ComboBox();
+            this.EnvironmentLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // DetailsLabel
-            // 
-            this.DetailsLabel.AutoSize = true;
-            this.DetailsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DetailsLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.DetailsLabel.Location = new System.Drawing.Point(20, 79);
-            this.DetailsLabel.Name = "DetailsLabel";
-            this.DetailsLabel.Size = new System.Drawing.Size(82, 30);
-            this.DetailsLabel.TabIndex = 44;
-            this.DetailsLabel.Text = "Details:";
             // 
             // FormHeader
             // 
@@ -85,7 +74,7 @@
             this.AffectedLabel.AutoSize = true;
             this.AffectedLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AffectedLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.AffectedLabel.Location = new System.Drawing.Point(66, 129);
+            this.AffectedLabel.Location = new System.Drawing.Point(29, 197);
             this.AffectedLabel.Name = "AffectedLabel";
             this.AffectedLabel.Size = new System.Drawing.Size(169, 25);
             this.AffectedLabel.TabIndex = 46;
@@ -96,9 +85,9 @@
             // 
             this.AffectedCheckedListbox.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.AffectedCheckedListbox.FormattingEnabled = true;
-            this.AffectedCheckedListbox.Location = new System.Drawing.Point(264, 129);
+            this.AffectedCheckedListbox.Location = new System.Drawing.Point(227, 197);
             this.AffectedCheckedListbox.Name = "AffectedCheckedListbox";
-            this.AffectedCheckedListbox.Size = new System.Drawing.Size(162, 124);
+            this.AffectedCheckedListbox.Size = new System.Drawing.Size(202, 124);
             this.AffectedCheckedListbox.TabIndex = 48;
             // 
             // StatusLabel
@@ -106,7 +95,7 @@
             this.StatusLabel.AutoSize = true;
             this.StatusLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StatusLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.StatusLabel.Location = new System.Drawing.Point(591, 136);
+            this.StatusLabel.Location = new System.Drawing.Point(978, 132);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(66, 25);
             this.StatusLabel.TabIndex = 49;
@@ -116,7 +105,7 @@
             // StatusCombobox
             // 
             this.StatusCombobox.FormattingEnabled = true;
-            this.StatusCombobox.Location = new System.Drawing.Point(743, 129);
+            this.StatusCombobox.Location = new System.Drawing.Point(1068, 125);
             this.StatusCombobox.Name = "StatusCombobox";
             this.StatusCombobox.Size = new System.Drawing.Size(233, 38);
             this.StatusCombobox.TabIndex = 50;
@@ -126,7 +115,7 @@
             this.ResolutionLabel.AutoSize = true;
             this.ResolutionLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ResolutionLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ResolutionLabel.Location = new System.Drawing.Point(591, 180);
+            this.ResolutionLabel.Location = new System.Drawing.Point(940, 176);
             this.ResolutionLabel.Name = "ResolutionLabel";
             this.ResolutionLabel.Size = new System.Drawing.Size(104, 25);
             this.ResolutionLabel.TabIndex = 51;
@@ -135,7 +124,7 @@
             // ResolutionCombobox
             // 
             this.ResolutionCombobox.FormattingEnabled = true;
-            this.ResolutionCombobox.Location = new System.Drawing.Point(743, 173);
+            this.ResolutionCombobox.Location = new System.Drawing.Point(1068, 169);
             this.ResolutionCombobox.Name = "ResolutionCombobox";
             this.ResolutionCombobox.Size = new System.Drawing.Size(233, 38);
             this.ResolutionCombobox.TabIndex = 52;
@@ -143,7 +132,7 @@
             // FixedCombobox
             // 
             this.FixedCombobox.FormattingEnabled = true;
-            this.FixedCombobox.Location = new System.Drawing.Point(743, 217);
+            this.FixedCombobox.Location = new System.Drawing.Point(1068, 213);
             this.FixedCombobox.Name = "FixedCombobox";
             this.FixedCombobox.Size = new System.Drawing.Size(233, 38);
             this.FixedCombobox.TabIndex = 56;
@@ -153,7 +142,7 @@
             this.FixedLabel.AutoSize = true;
             this.FixedLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FixedLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.FixedLabel.Location = new System.Drawing.Point(591, 224);
+            this.FixedLabel.Location = new System.Drawing.Point(916, 220);
             this.FixedLabel.Name = "FixedLabel";
             this.FixedLabel.Size = new System.Drawing.Size(128, 25);
             this.FixedLabel.TabIndex = 55;
@@ -162,7 +151,7 @@
             // CategoryCombobox
             // 
             this.CategoryCombobox.FormattingEnabled = true;
-            this.CategoryCombobox.Location = new System.Drawing.Point(254, 396);
+            this.CategoryCombobox.Location = new System.Drawing.Point(646, 220);
             this.CategoryCombobox.Name = "CategoryCombobox";
             this.CategoryCombobox.Size = new System.Drawing.Size(233, 38);
             this.CategoryCombobox.TabIndex = 63;
@@ -172,7 +161,7 @@
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CategoryLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.CategoryLabel.Location = new System.Drawing.Point(66, 403);
+            this.CategoryLabel.Location = new System.Drawing.Point(548, 226);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(92, 25);
             this.CategoryLabel.TabIndex = 62;
@@ -181,7 +170,7 @@
             // ConfirmCombobox
             // 
             this.ConfirmCombobox.FormattingEnabled = true;
-            this.ConfirmCombobox.Location = new System.Drawing.Point(254, 352);
+            this.ConfirmCombobox.Location = new System.Drawing.Point(646, 176);
             this.ConfirmCombobox.Name = "ConfirmCombobox";
             this.ConfirmCombobox.Size = new System.Drawing.Size(233, 38);
             this.ConfirmCombobox.TabIndex = 61;
@@ -191,7 +180,7 @@
             this.ConfirmationStatusLabel.AutoSize = true;
             this.ConfirmationStatusLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ConfirmationStatusLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ConfirmationStatusLabel.Location = new System.Drawing.Point(66, 359);
+            this.ConfirmationStatusLabel.Location = new System.Drawing.Point(458, 183);
             this.ConfirmationStatusLabel.Name = "ConfirmationStatusLabel";
             this.ConfirmationStatusLabel.Size = new System.Drawing.Size(182, 25);
             this.ConfirmationStatusLabel.TabIndex = 60;
@@ -200,7 +189,7 @@
             // LabelsCombobox
             // 
             this.LabelsCombobox.FormattingEnabled = true;
-            this.LabelsCombobox.Location = new System.Drawing.Point(254, 308);
+            this.LabelsCombobox.Location = new System.Drawing.Point(646, 132);
             this.LabelsCombobox.Name = "LabelsCombobox";
             this.LabelsCombobox.Size = new System.Drawing.Size(233, 38);
             this.LabelsCombobox.TabIndex = 59;
@@ -210,7 +199,7 @@
             this.LabelsLabel.AutoSize = true;
             this.LabelsLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LabelsLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.LabelsLabel.Location = new System.Drawing.Point(66, 315);
+            this.LabelsLabel.Location = new System.Drawing.Point(571, 132);
             this.LabelsLabel.Name = "LabelsLabel";
             this.LabelsLabel.Size = new System.Drawing.Size(69, 25);
             this.LabelsLabel.TabIndex = 58;
@@ -221,26 +210,18 @@
             this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DescriptionLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.DescriptionLabel.Location = new System.Drawing.Point(20, 455);
+            this.DescriptionLabel.Location = new System.Drawing.Point(20, 331);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(127, 30);
             this.DescriptionLabel.TabIndex = 64;
             this.DescriptionLabel.Text = "Description:";
             // 
-            // DescriptionTextbox
-            // 
-            this.DescriptionTextbox.Location = new System.Drawing.Point(20, 488);
-            this.DescriptionTextbox.Multiline = true;
-            this.DescriptionTextbox.Name = "DescriptionTextbox";
-            this.DescriptionTextbox.Size = new System.Drawing.Size(888, 146);
-            this.DescriptionTextbox.TabIndex = 65;
-            // 
             // PriorityCombobox
             // 
             this.PriorityCombobox.FormattingEnabled = true;
-            this.PriorityCombobox.Location = new System.Drawing.Point(20, 872);
+            this.PriorityCombobox.Location = new System.Drawing.Point(1068, 257);
             this.PriorityCombobox.Name = "PriorityCombobox";
-            this.PriorityCombobox.Size = new System.Drawing.Size(214, 38);
+            this.PriorityCombobox.Size = new System.Drawing.Size(233, 38);
             this.PriorityCombobox.TabIndex = 71;
             // 
             // SaveButton
@@ -249,89 +230,102 @@
             this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(914, 872);
+            this.SaveButton.Location = new System.Drawing.Point(1157, 879);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(130, 38);
             this.SaveButton.TabIndex = 70;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
-            // 
-            // AttatchmentRichTextbox
-            // 
-            this.AttatchmentRichTextbox.Location = new System.Drawing.Point(20, 677);
-            this.AttatchmentRichTextbox.Name = "AttatchmentRichTextbox";
-            this.AttatchmentRichTextbox.Size = new System.Drawing.Size(888, 141);
-            this.AttatchmentRichTextbox.TabIndex = 69;
-            this.AttatchmentRichTextbox.Text = "";
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // PriorityLabel
             // 
             this.PriorityLabel.AutoSize = true;
             this.PriorityLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.PriorityLabel.Location = new System.Drawing.Point(19, 824);
+            this.PriorityLabel.Location = new System.Drawing.Point(961, 257);
             this.PriorityLabel.Name = "PriorityLabel";
             this.PriorityLabel.Size = new System.Drawing.Size(83, 30);
             this.PriorityLabel.TabIndex = 68;
             this.PriorityLabel.Text = "Priority:";
             // 
-            // UploadButton
+            // TitleTextBox
             // 
-            this.UploadButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.UploadButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UploadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UploadButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UploadButton.Location = new System.Drawing.Point(914, 692);
-            this.UploadButton.Name = "UploadButton";
-            this.UploadButton.Size = new System.Drawing.Size(130, 38);
-            this.UploadButton.TabIndex = 67;
-            this.UploadButton.Text = "Upload";
-            this.UploadButton.UseVisualStyleBackColor = false;
+            this.TitleTextBox.Location = new System.Drawing.Point(227, 86);
+            this.TitleTextBox.Multiline = true;
+            this.TitleTextBox.Name = "TitleTextBox";
+            this.TitleTextBox.Size = new System.Drawing.Size(202, 34);
+            this.TitleTextBox.TabIndex = 84;
             // 
-            // AttatchmentLabel
+            // label1
             // 
-            this.AttatchmentLabel.AutoSize = true;
-            this.AttatchmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.AttatchmentLabel.Location = new System.Drawing.Point(18, 644);
-            this.AttatchmentLabel.Name = "AttatchmentLabel";
-            this.AttatchmentLabel.Size = new System.Drawing.Size(134, 30);
-            this.AttatchmentLabel.TabIndex = 66;
-            this.AttatchmentLabel.Text = "Attatchment:";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Location = new System.Drawing.Point(141, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 30);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Title:";
             // 
-            // RemoveButton
+            // ApplicationCombobox
             // 
-            this.RemoveButton.BackColor = System.Drawing.Color.Crimson;
-            this.RemoveButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RemoveButton.Location = new System.Drawing.Point(914, 736);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(130, 38);
-            this.RemoveButton.TabIndex = 72;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = false;
+            this.ApplicationCombobox.FormattingEnabled = true;
+            this.ApplicationCombobox.Location = new System.Drawing.Point(227, 142);
+            this.ApplicationCombobox.Name = "ApplicationCombobox";
+            this.ApplicationCombobox.Size = new System.Drawing.Size(202, 38);
+            this.ApplicationCombobox.TabIndex = 82;
+            this.ApplicationCombobox.SelectedIndexChanged += new System.EventHandler(this.ApplicationCombobox_SelectedIndexChanged_1);
             // 
-            // RemoveSelectedCombobox
+            // ApplicationLabel
             // 
-            this.RemoveSelectedCombobox.FormattingEnabled = true;
-            this.RemoveSelectedCombobox.Location = new System.Drawing.Point(914, 780);
-            this.RemoveSelectedCombobox.Name = "RemoveSelectedCombobox";
-            this.RemoveSelectedCombobox.Size = new System.Drawing.Size(130, 38);
-            this.RemoveSelectedCombobox.TabIndex = 73;
+            this.ApplicationLabel.AutoSize = true;
+            this.ApplicationLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.ApplicationLabel.Location = new System.Drawing.Point(75, 140);
+            this.ApplicationLabel.Name = "ApplicationLabel";
+            this.ApplicationLabel.Size = new System.Drawing.Size(123, 30);
+            this.ApplicationLabel.TabIndex = 81;
+            this.ApplicationLabel.Text = "Application:";
             // 
-            // UpdateBugReport
+            // DescriptionTextbox
+            // 
+            this.DescriptionTextbox.Location = new System.Drawing.Point(20, 364);
+            this.DescriptionTextbox.Multiline = true;
+            this.DescriptionTextbox.Name = "DescriptionTextbox";
+            this.DescriptionTextbox.Size = new System.Drawing.Size(1267, 442);
+            this.DescriptionTextbox.TabIndex = 65;
+            // 
+            // EnvironmentCombobox
+            // 
+            this.EnvironmentCombobox.FormattingEnabled = true;
+            this.EnvironmentCombobox.Location = new System.Drawing.Point(646, 272);
+            this.EnvironmentCombobox.Name = "EnvironmentCombobox";
+            this.EnvironmentCombobox.Size = new System.Drawing.Size(233, 38);
+            this.EnvironmentCombobox.TabIndex = 86;
+            // 
+            // EnvironmentLabel
+            // 
+            this.EnvironmentLabel.AutoSize = true;
+            this.EnvironmentLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.EnvironmentLabel.Location = new System.Drawing.Point(505, 272);
+            this.EnvironmentLabel.Name = "EnvironmentLabel";
+            this.EnvironmentLabel.Size = new System.Drawing.Size(135, 30);
+            this.EnvironmentLabel.TabIndex = 85;
+            this.EnvironmentLabel.Text = "Environment:";
+            // 
+            // UpdateBugReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1097, 940);
-            this.Controls.Add(this.RemoveSelectedCombobox);
-            this.Controls.Add(this.RemoveButton);
+            this.ClientSize = new System.Drawing.Size(1334, 940);
+            this.Controls.Add(this.EnvironmentCombobox);
+            this.Controls.Add(this.EnvironmentLabel);
+            this.Controls.Add(this.TitleTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ApplicationCombobox);
+            this.Controls.Add(this.ApplicationLabel);
             this.Controls.Add(this.PriorityCombobox);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.AttatchmentRichTextbox);
             this.Controls.Add(this.PriorityLabel);
-            this.Controls.Add(this.UploadButton);
-            this.Controls.Add(this.AttatchmentLabel);
             this.Controls.Add(this.DescriptionTextbox);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.CategoryCombobox);
@@ -348,12 +342,11 @@
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.AffectedCheckedListbox);
             this.Controls.Add(this.AffectedLabel);
-            this.Controls.Add(this.DetailsLabel);
             this.Controls.Add(this.FormHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Name = "UpdateBugReport";
+            this.Name = "UpdateBugReportForm";
             this.Text = "Update Bug Report";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -361,7 +354,6 @@
         }
 
         #endregion
-        private Label DetailsLabel;
         private Label FormHeader;
         private Label AffectedLabel;
         private CheckedListBox AffectedCheckedListbox;
@@ -378,14 +370,15 @@
         private ComboBox LabelsCombobox;
         private Label LabelsLabel;
         private Label DescriptionLabel;
-        private TextBox DescriptionTextbox;
         private ComboBox PriorityCombobox;
         private Button SaveButton;
-        private RichTextBox AttatchmentRichTextbox;
         private Label PriorityLabel;
-        private Button UploadButton;
-        private Label AttatchmentLabel;
-        private Button RemoveButton;
-        private ComboBox RemoveSelectedCombobox;
+        private TextBox TitleTextBox;
+        private Label label1;
+        private ComboBox ApplicationCombobox;
+        private Label ApplicationLabel;
+        private TextBox DescriptionTextbox;
+        private ComboBox EnvironmentCombobox;
+        private Label EnvironmentLabel;
     }
 }

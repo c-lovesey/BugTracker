@@ -32,7 +32,6 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
             this.FormHeader = new System.Windows.Forms.Label();
-            this.BackButton = new System.Windows.Forms.Button();
             this.EnvironmentTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -42,7 +41,7 @@
             this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(317, 170);
+            this.SaveButton.Location = new System.Drawing.Point(183, 166);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(107, 56);
             this.SaveButton.TabIndex = 27;
@@ -72,20 +71,6 @@
             this.FormHeader.Text = "Register New Environment";
             this.FormHeader.Click += new System.EventHandler(this.FormHeader_Click);
             // 
-            // BackButton
-            // 
-            this.BackButton.BackColor = System.Drawing.Color.Red;
-            this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BackButton.Location = new System.Drawing.Point(82, 170);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(107, 56);
-            this.BackButton.TabIndex = 32;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = false;
-            this.BackButton.Click += new System.EventHandler(this.button1_Click);
-            // 
             // EnvironmentTextBox
             // 
             this.EnvironmentTextBox.Location = new System.Drawing.Point(82, 100);
@@ -97,9 +82,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 277);
+            this.ClientSize = new System.Drawing.Size(484, 244);
             this.Controls.Add(this.EnvironmentTextBox);
-            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.FormHeader);
@@ -116,7 +100,6 @@
         private Button SaveButton;
         private Label NameLabel;
         private Label FormHeader;
-        private Button BackButton;
         private TextBox EnvironmentTextBox;
     }
 }

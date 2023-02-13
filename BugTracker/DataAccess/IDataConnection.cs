@@ -23,5 +23,23 @@ namespace BugTrackerLibrary.DataAccess
         List<BugModel> SearchBugReport(int? ApplicationID, string category, string status, string resolution, string title);
         void Delete_Application(int id);
         void Delete_BugReport(int id);
+        void Delete_Environment(int id);
+        void Delete_Version(int id);
+        void Update_BugReport(int id, 
+            int applicationId, 
+            string commaSeparatedVersions,
+            int environmentId,
+            string bugStatus,
+            string bugResolution,
+            string bugPriority,
+            string bugDescription,
+            string bugTitle,
+            string bugLabel,
+            string bugCategory,
+            string bugFixedVersion,
+            string bugConfirmation,
+            string affectedVersions);
+        EnvironmentModel GetEnvironment_ByID(int id);
+
     }
 }

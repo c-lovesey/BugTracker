@@ -17,6 +17,7 @@ namespace BugTrackerUI
     {
         private List<ApplicationModel> availableApplications = GlobalConfig.Connection.GetApplication_All();
         private List<BugModel> availableBugReports = GlobalConfig.Connection.GetBugReport_All();
+        private List<EnvironmentModel> availableEnviroments = GlobalConfig.Connection.GetEnvironment_All();
         private List<string> resolutionOptions = new List<string>() {"" ,"Unresolved", "Resolved" };
         //private List<string> priorityOptions = new List<string>() { "Low", "Medium", "High" };
         private List<string> categoryOptions = new List<string>() { "", "Functional", "Syntax", "Logic", "Calculation", "Integration", "Undefined" };
@@ -155,6 +156,15 @@ namespace BugTrackerUI
                 BugTitleLabel.Text = selectedBug.BugTitle;
                 BugDetailsLabel.Text = selectedBug.BugDescription;
                 LoadPicture(selectedBug.ApplicationID);
+                ConfirmationDetailsLabel.Text = selectedBug.BugConfirmation;
+                ResolutionDetailsLabel.Text = selectedBug.BugResolution;
+                EnvironmentDetailsLabel.Text = GlobalConfig.Connection.GetEnvironment_ByID(selectedBug.EnvironmentID).EnvironmentName;
+                PriorityDetailsLabel.Text = selectedBug.BugPriority;
+                StatusDetailsLabel.Text = selectedBug.BugStatus;
+                CategoryDetailsLabel.Text = selectedBug.BugCategory;
+                ResolutionDetailsLabel.Text = selectedBug.BugResolution;
+                FixedVersionDetailsLabel.Text = selectedBug.BugFixedVersion;
+
             }
             
 
@@ -169,8 +179,11 @@ namespace BugTrackerUI
 
         private void NavigationUpdateReportLabel_Click(object sender, EventArgs e)
         {
-            Form form = new UpdateBugReportForm();
-            form.Show();
+            // Get the selected bug from the data grid view
+            BugModel selectedBug = (BugModel)BugListbox.SelectedItem;
+            // Pass the selected bug as a parameter when creating an instance of the UpdateBugReportForm
+            var updateForm = new UpdateBugReportForm(selectedBug);
+            updateForm.ShowDialog();
         }
 
         private void NavigationRemoveReportLabel_Click(object sender, EventArgs e)
@@ -201,6 +214,19 @@ namespace BugTrackerUI
         {
             Form form = new AddApplicationForm();
             form.Show();
+           
+    }
+
+        private void AttatchmentButton_Click(object sender, EventArgs e)
+        {
+            BugModel selectedBug = (BugModel)BugListbox.SelectedItem;
+            if (selectedBug != null)
+            {
+                AttachmentForm attachmentForm = new AttachmentForm();
+                attachmentForm.SetId(selectedBug.id);
+                attachmentForm.Show();
+            }
+
         }
     }
 }

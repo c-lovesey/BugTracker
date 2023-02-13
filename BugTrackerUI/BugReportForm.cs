@@ -103,6 +103,7 @@ namespace BugTrackerUI
 
 
                 GlobalConfig.Connection.CreateBugReport(model);
+                AddFile(model.id);
                 ApplicationCombobox.Text = "";
                 VersionCheckedListbox.Text = "";
                 EnvironmentCombobox.Text = "";
@@ -192,6 +193,25 @@ namespace BugTrackerUI
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void UploadButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void AddFile(int id)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "All Files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog.FileName;
+                string extension = Path.GetExtension(path);
+                string destinationDirectory = @"C:\Users\clove\source\repos\BugTracker\BugTrackerUI\Attatchments\";
+                int uniqueID = Directory.GetFiles(destinationDirectory, $"{id}-*{extension}").Length + 1;
+                string destinationPath = Path.Combine(destinationDirectory, $"{id}-{uniqueID}{extension}");
+                File.Copy(path, destinationPath, true);
+            }
         }
     }
 }
