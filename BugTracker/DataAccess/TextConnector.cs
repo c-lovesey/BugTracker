@@ -10,7 +10,7 @@ namespace BugTrackerLibrary.DataAccess
 {
     public class TextConnector : IDataConnection
     {
-
+        //TODO try using newton json serializer
         private const string BugReportFile = "BugReportFile.csv";
         private const string EnvironmentFile = "EnvironmentFile.csv";
         private const string VersionFile = "VersionFile.csv";

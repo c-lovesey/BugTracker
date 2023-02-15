@@ -15,6 +15,7 @@ namespace BugTrackerUI
 {
     public partial class BugReportForm : Form
     {
+        //Creates a list for each Dropdown menu and gets relevant data from the database
         private List<ApplicationModel> availableApplications = GlobalConfig.Connection.GetApplication_All();
         private List<VersionModel> availableVersions = new List<VersionModel>();
         private List<EnvironmentModel> availableEnviroments = GlobalConfig.Connection.GetEnvironment_All();
@@ -30,12 +31,14 @@ namespace BugTrackerUI
 
         public BugReportForm()
         {
+            //initializes form components
             InitializeComponent();
-   
+            //calls the WireUpLists method which fills the dropdown menus with the lists created above
             WireUpLists();
         }
         private void WireUpLists()
         {
+            //sets the datasource of each dropdown menu to the list created above
             ApplicationCombobox.DataSource = null;
             ApplicationCombobox.DataSource = availableApplications;
             ApplicationCombobox.DisplayMember = "ApplicationName";
@@ -69,11 +72,13 @@ namespace BugTrackerUI
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            //Checks if the form is valid before saving
             if (ValidateForm())
             {
+                //Converts the selected items in the checked list box to a string of comma seperated values
                 List<VersionModel> selectedVersions = VersionCheckedListbox.CheckedItems.Cast<VersionModel>().ToList();
                 string commaSeparatedVersions = string.Join(",", selectedVersions.Select(x => x.VersionName));
-
+                //Gets all the relevant information from the form for creating a bug report
                 ApplicationModel app = (ApplicationModel)ApplicationCombobox.SelectedItem;
                 int applicationId = app.id;
                 EnvironmentModel env = (EnvironmentModel)EnvironmentCombobox.SelectedItem;
@@ -87,6 +92,7 @@ namespace BugTrackerUI
                 string bugCategory = CategoryCombobox.Text;
                 string bugFixedVersion = FixedCombobox.Text;
                 string bugConfirmation = ConfirmCombobox.Text;
+                //calls the BugModel constructor to create a new bug report
                 BugModel model = new BugModel(
                     applicationId,
                     commaSeparatedVersions,
@@ -101,9 +107,10 @@ namespace BugTrackerUI
                     bugFixedVersion,
                     bugConfirmation);
 
-
+                //Calls the SQL stored procedure to create a new bug report
                 GlobalConfig.Connection.CreateBugReport(model);
                 //AddFile(model.id);
+                //Resets the information in the form
                 ApplicationCombobox.Text = "";
                 VersionCheckedListbox.Text = "";
                 EnvironmentCombobox.Text = "";
@@ -122,6 +129,7 @@ namespace BugTrackerUI
         }
         private bool ValidateForm()
         {
+            //Checks if each value inputted into the form is valid
             bool output = true;
 
             if (VersionCheckedListbox.Text.Length == 0)
@@ -181,10 +189,12 @@ namespace BugTrackerUI
 
         private void ApplicationCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Gets the selected application from the combobox and displays the versions for that application in the checked list box
             VersionCheckedListbox.DataSource = null;
             ApplicationModel selectedApp = (ApplicationModel)ApplicationCombobox.SelectedItem;
             int selectedAppId = selectedApp.id;
             List<VersionModel> versionsForSelectedApp = GlobalConfig.Connection.GetVersion_Application(selectedAppId);
+            
             VersionCheckedListbox.DataSource = versionsForSelectedApp;
             VersionCheckedListbox.DisplayMember = "VersionName";
             VersionCheckedListbox.Refresh();
@@ -201,6 +211,7 @@ namespace BugTrackerUI
         }
         private void AddFile(int id)
         {
+            //Allows the user to add files as Attatchments to the BugReport
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "All Files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == DialogResult.OK)

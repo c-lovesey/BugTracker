@@ -39,8 +39,9 @@ namespace BugTrackerUI
         {
             if (ValidateForm())
             {
+                //This is a simple form with only one input, so we can just create the model and save it.
                 EnvironmentModel model = new EnvironmentModel(EnvironmentTextBox.Text);
-
+                //TODO - Test inputting the same Environment twice.
 
                 GlobalConfig.Connection.CreateEnvironment(model);
                 
@@ -61,7 +62,6 @@ namespace BugTrackerUI
 
             if (EnvironmentTextBox.Text.Length == 0)
             {
-                //say input version
                 output = false;
             }
             return output;

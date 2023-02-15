@@ -153,16 +153,16 @@
             // SearchTextbox
             // 
             this.SearchTextbox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.SearchTextbox.Location = new System.Drawing.Point(995, 61);
+            this.SearchTextbox.Location = new System.Drawing.Point(371, 63);
             this.SearchTextbox.Name = "SearchTextbox";
-            this.SearchTextbox.Size = new System.Drawing.Size(150, 35);
+            this.SearchTextbox.Size = new System.Drawing.Size(779, 35);
             this.SearchTextbox.TabIndex = 1;
             this.SearchTextbox.Text = "Contains Text";
             // 
             // ApplicationLabel
             // 
             this.ApplicationLabel.AutoSize = true;
-            this.ApplicationLabel.Location = new System.Drawing.Point(247, 64);
+            this.ApplicationLabel.Location = new System.Drawing.Point(504, 128);
             this.ApplicationLabel.Name = "ApplicationLabel";
             this.ApplicationLabel.Size = new System.Drawing.Size(123, 30);
             this.ApplicationLabel.TabIndex = 2;
@@ -171,7 +171,7 @@
             // ApplicationCombobox
             // 
             this.ApplicationCombobox.FormattingEnabled = true;
-            this.ApplicationCombobox.Location = new System.Drawing.Point(371, 61);
+            this.ApplicationCombobox.Location = new System.Drawing.Point(628, 125);
             this.ApplicationCombobox.Name = "ApplicationCombobox";
             this.ApplicationCombobox.Size = new System.Drawing.Size(121, 38);
             this.ApplicationCombobox.TabIndex = 3;
@@ -179,7 +179,7 @@
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
-            this.TypeLabel.Location = new System.Drawing.Point(498, 64);
+            this.TypeLabel.Location = new System.Drawing.Point(755, 128);
             this.TypeLabel.Name = "TypeLabel";
             this.TypeLabel.Size = new System.Drawing.Size(61, 30);
             this.TypeLabel.TabIndex = 4;
@@ -188,7 +188,7 @@
             // CategoryCombobox
             // 
             this.CategoryCombobox.FormattingEnabled = true;
-            this.CategoryCombobox.Location = new System.Drawing.Point(565, 61);
+            this.CategoryCombobox.Location = new System.Drawing.Point(822, 125);
             this.CategoryCombobox.Name = "CategoryCombobox";
             this.CategoryCombobox.Size = new System.Drawing.Size(121, 38);
             this.CategoryCombobox.TabIndex = 5;
@@ -196,7 +196,7 @@
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(692, 64);
+            this.StatusLabel.Location = new System.Drawing.Point(949, 128);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(74, 30);
             this.StatusLabel.TabIndex = 6;
@@ -205,7 +205,7 @@
             // StatusCombobox
             // 
             this.StatusCombobox.FormattingEnabled = true;
-            this.StatusCombobox.Location = new System.Drawing.Point(772, 61);
+            this.StatusCombobox.Location = new System.Drawing.Point(1029, 125);
             this.StatusCombobox.Name = "StatusCombobox";
             this.StatusCombobox.Size = new System.Drawing.Size(121, 38);
             this.StatusCombobox.TabIndex = 7;
@@ -330,7 +330,7 @@
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(919, 66);
+            this.TitleLabel.Location = new System.Drawing.Point(295, 68);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(57, 30);
             this.TitleLabel.TabIndex = 27;

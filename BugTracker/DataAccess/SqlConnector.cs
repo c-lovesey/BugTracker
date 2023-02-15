@@ -16,39 +16,42 @@ namespace BugTrackerLibrary.DataAccess
 
     public class SqlConnector : IDataConnection
     {
+        //Stores the name of the Database
         private const string db = "BugTracker";
-        //TODO - Make the other creation methods for each model
-        // TODO - Make the CreateBugReport method save to the database
-        /// <summary>
-        /// Saves a new Bug Report to the database
-        /// </summary>
-        /// <param name="model">Report Information</param>
-        /// <returns>The report info, including the unique id</returns>
-        /// 
 
         public ApplicationModel CreateApplication(ApplicationModel model)
         {
+            //Creates connection to database
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
+                //Creates a new DynamicParameters object
                 var p = new DynamicParameters();
+                //Adds the parameters to the DynamicParameters object
                 p.Add("@ApplicationName", model.ApplicationName);
                 p.Add("@ApplicationLetterID", model.ApplicationLetterID);
+                //Gets the ID of the newly created application
                 int applicationId = connection.QueryFirst<int>("dbo.spApplication_Insert", p, commandType: CommandType.StoredProcedure);
                 model.id = applicationId;
+                //Closes connection
+                connection.Close();
                 return model;
             }
         }
         public VersionModel CreateVersion(VersionModel model, int CurrentApplication)
         {
+            //Creates connection to database
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
+                //Creates a new DynamicParameters object
                 var p = new DynamicParameters();
+                //Adds the parameters to the DynamicParameters object
                 p.Add("@VersionName", model.VersionName);
                 p.Add("@ApplicationID", CurrentApplication);
-                //TODO: Find a way to get the application ID using the name of the application
-                //p.Add("@ApplicationID", model.Application);
+                //Gets the ID of the newly created application
                 int versionId = connection.QueryFirst<int>("dbo.spVersion_Insert", p, commandType: CommandType.StoredProcedure);
                 model.id = versionId;
+                //Closes connetion
+                connection.Close();
                 return model;
             }
         }
@@ -87,10 +90,12 @@ namespace BugTrackerLibrary.DataAccess
 
                 int bugId = connection.QueryFirst<int>("dbo.spBugReport_Insert", p, commandType: CommandType.StoredProcedure);
                 model.id = bugId;
+                connection.Close();
                 return model;
 
             }
-
+            
+                
             //    model.BugId = 1;
             //return model;
         }
